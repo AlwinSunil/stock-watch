@@ -1,0 +1,29 @@
+.search {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.searchbar {
+  background: #eee;
+  border: 0px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  border-radius: 0.1rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #222;
+
+  & img {
+    padding: 0.2rem;
+    width: 2rem;
+  }
+
+  & input {
+    background: #eee;
+    border: 0px;
+    width: 100%;
+    font-size: 1rem;
+    padding-left: 0.75rem;
+    color: #222;
+  }
+}
