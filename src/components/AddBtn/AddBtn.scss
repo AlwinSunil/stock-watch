@@ -1,10 +1,12 @@
 .addstock {
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  z-index: 99;
+  height: 5rem;
 
   &-btn {
     background: var(--primary);
-    padding: 0.5rem 0.75rem;
+    padding: 0.4rem 0.75rem;
     border-radius: 0.1rem;
     display: flex;
     width: 100%;
@@ -25,6 +27,16 @@
       margin-right: auto;
       padding-left: 0.25rem;
       border: 0px;
+    }
+
+    &:hover {
+      transform: scale(1.0075) !important;
+      cursor: pointer;
+    }
+
+    &:active {
+      opacity: 0.9;
+      transform: scale(1);
     }
   }
 }

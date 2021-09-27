@@ -1,16 +1,23 @@
-import './App.scss';
+import { Switch, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
-import SearchBar from './components/SearchBar';
+import Search from './components/Search';
 import AddBtn from './components/AddBtn';
 import Home from './components/Home';
+import './App.scss';
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
-      {/* <SearchBar /> */}
-      <AddBtn />
-      <Home />
+      <Switch>
+        <Route path="/" exact>
+          <Navbar />
+          <AddBtn />
+          <Home />
+        </Route>
+        <Route path="/addstock" exact>
+          <Search />
+        </Route>
+      </Switch>
     </div>
   );
 }

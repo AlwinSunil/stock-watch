@@ -1,6 +1,9 @@
-import "./Home.scss";
+import { useHistory } from "react-router-dom";
+import "./Search.scss";
 
-function Home() {
+
+function SearchBar() {
+    const history = useHistory();
 
     const stocks = [{
         symbol: 'TSLA',
@@ -58,17 +61,27 @@ function Home() {
     }]
 
     return (
-        <div className="home">
-            <div className="stocks">
+        <div className="search">
+            <div className="searchbar__header">
+                <div className="searchbar__holder">
+                    <div className="btn navigation__back" onClick={() => history.goBack()}>
+                        <img src="/assets/icons/back.svg" alt="" />
+                    </div>
+                    <div className="searchbar">
+                        <img src="/assets/icons/search.svg" alt="" />
+                        <input type="text" name="search" id="" placeholder="Search for stocks here"></input>
+                    </div>
+                </div>
+            </div>
+            <div className="search__results">
                 {stocks.map((stock) => (
-                    <div className="stock">
+                    <div className="search__result">
                         <div className="stock__details">
                             <p className="stock__symbol">{stock.symbol}</p>
                             <p className="stock__name">{stock.name}</p>
                         </div>
                         <div className="stock__price">
                             <p className="stock__price-inst">{stock.priceinst}</p>
-                            <p className="stock__price-grow">{stock.growth}</p>
                         </div>
                     </div>
                 ))}
@@ -77,4 +90,5 @@ function Home() {
     )
 }
 
-export default Home
+
+export default SearchBar

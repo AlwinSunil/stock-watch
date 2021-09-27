@@ -5,7 +5,9 @@
   --primary: #4845d2;
   --secondary: #a3a2ff;
   --neutral: #eeeeee;
-  --text: #111111;
+  --neutral-bg: #f4f4f4;
+  --neutral-hover: #e4e4e4;
+  --text: #222222;
   --white: #ffffff;
 }
 
@@ -148,6 +150,6 @@ button {
   bottom: 0;
   height: 5px;
   width: 200px;
-  background: #fff;
+  background: var(--white);
   overflow: hidden;
 }
