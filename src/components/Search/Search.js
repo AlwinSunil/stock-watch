@@ -68,8 +68,10 @@ function SearchBar() {
                         <img src="/assets/icons/back.svg" alt="" />
                     </div>
                     <div className="searchbar">
-                        <img src="/assets/icons/search.svg" alt="" />
-                        <input type="text" name="search" id="" placeholder="Search for stocks here"></input>
+                        <button className="searchbar__btn">
+                            <img src="/assets/icons/search.svg" alt="" />
+                        </button>
+                        <input type="text" name="search" id="searchbar-input" placeholder="Search for stocks here"></input>
                     </div>
                 </div>
             </div>
