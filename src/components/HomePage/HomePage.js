@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import Navbar from '../../components/Navbar';
 import AddBtn from '../../components/AddBtn';
 import Home from '../../components/Home';
+import Search from '../../components/Search';
 
 function HomePage() {
     const [userLoggedIn, setUserLoggedIn] = useState();
@@ -25,6 +26,7 @@ function HomePage() {
                 <Navbar />
                 <AddBtn />
                 <Home />
+                <Route path="/addstock" component={Search} exact />
             </>
         )
     } else {

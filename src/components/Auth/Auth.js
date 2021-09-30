@@ -1,11 +1,11 @@
 import "./Auth.scss"
 
-function Authentication() {
+function Auth() {
     return (
         <div className="auth">
-        
+
         </div>
     )
 }
 
-export default Authentication;
+export default Auth;

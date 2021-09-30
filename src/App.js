@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Loading from './components/Loading';
 import Auth from './components/Auth';
 import Login from './components/Login/Login';
 import Signup from './components/Signup';
 import HomePage from "./components/HomePage"
-import Search from './components/Search';
 import "./firebase.js";
 import './App.scss';
 
@@ -22,11 +21,11 @@ function App() {
 
   return (
     <div className="app">
+      <Route path="/auth" component={Auth} exact />
       <Route path="/login" component={Login} exact />
       <Route path="/signup" component={Signup} exact />
-      <Route path="/auth" component={Auth} exact />
-      <Route path="/" exact component={HomePage} />
-      <Route path="/addstock" exact component={Search} />
+      <Route path="/" component={HomePage} exact />
+      <Redirect path="*" to="/" exact />
     </div>
   );
 }
