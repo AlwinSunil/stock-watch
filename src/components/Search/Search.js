@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Search.scss";
 
+function Search() {
+    const [searchDoc, setSearchDoc] = useState([]);
 
-function SearchBar() {
     const history = useHistory();
 
     const stocks = [{
@@ -71,13 +73,13 @@ function SearchBar() {
                         <button className="searchbar__btn">
                             <img src="/assets/icons/search.svg" alt="" />
                         </button>
-                        <input type="text" name="search" id="searchbar-input" placeholder="Search for stocks here"></input>
+                        <input type="text" name="search" id="searchbar-input" placeholder="Search for stocks here" value={searchDoc} onChange={(e) => setSearchDoc(e.target.value)} />
                     </div>
                 </div>
             </div>
             <div className="search__results">
                 {stocks.map((stock) => (
-                    <div className="search__result">
+                    <div className="search__result" key={Math.random().toString(36).substring(2, 7)}>
                         <div className="stock__details">
                             <p className="stock__symbol">{stock.symbol}</p>
                             <p className="stock__name">{stock.name}</p>
@@ -88,9 +90,8 @@ function SearchBar() {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }
 
-
-export default SearchBar
+export default Search;

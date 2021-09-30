@@ -61,7 +61,7 @@ function Home() {
         <div className="home">
             <div className="stocks">
                 {stocks.map((stock) => (
-                    <div className="stock">
+                    <div className="stock" key={Math.random().toString(36).substring(2, 7)}>
                         <div className="stock__details">
                             <p className="stock__symbol">{stock.symbol}</p>
                             <p className="stock__name">{stock.name}</p>

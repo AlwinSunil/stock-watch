@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Route } from "react-router-dom";
 import Loading from './components/Loading';
-import Navbar from './components/Navbar';
+import Auth from './components/Auth';
+import Login from './components/Login/Login';
+import Signup from './components/Signup';
+import HomePage from "./components/HomePage"
 import Search from './components/Search';
-import AddBtn from './components/AddBtn';
-import Home from './components/Home';
 import "./firebase.js";
 import './App.scss';
 
@@ -21,16 +22,11 @@ function App() {
 
   return (
     <div className="app">
-      <Switch>
-        <Route path="/" exact>
-          <Navbar />
-          <AddBtn />
-          <Home />
-        </Route>
-        <Route path="/addstock" exact>
-          <Search />
-        </Route>
-      </Switch>
+      <Route path="/login" component={Login} exact />
+      <Route path="/signup" component={Signup} exact />
+      <Route path="/auth" component={Auth} exact />
+      <Route path="/" exact component={HomePage} />
+      <Route path="/addstock" exact component={Search} />
     </div>
   );
 }

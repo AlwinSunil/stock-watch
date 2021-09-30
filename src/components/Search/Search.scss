@@ -58,6 +58,11 @@
       transform: scale(1.05);
       cursor: pointer;
     }
+
+    &:active {
+      opacity: 0.9;
+      transform: scale(1);
+    }
   }
 
   &__header {
