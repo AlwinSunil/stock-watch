@@ -1,0 +1,303 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  background: var(--neutral);
+  width: 100vw;
+  height: 100%;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1.75rem 1.5rem;
+    width: 70%;
+    background: var(--white);
+    border-radius: 0.2rem;
+  }
+
+  &__header {
+    padding: 0px 0px 1.5rem 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+
+    & h3 {
+      font-weight: 600;
+      padding-bottom: 0.5rem;
+    }
+
+    & button {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--white);
+      color: var(--text);
+      border-radius: 0.2rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      padding: 0.5rem;
+      width: 100%;
+
+      & img {
+        margin-right: 0.75rem;
+        height: 1.4rem;
+      }
+
+      &:active {
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 0px 2px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0px;
+
+    &-terms {
+      padding-top: 0.25rem;
+
+      & label {
+        color: var(--text);
+        opacity: 0.8 !important;
+      }
+    }
+
+    & label {
+      padding: 0.75rem 0px 0.5rem 0px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    & input {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.2rem;
+      font-size: 0.95rem;
+      color: var(--text);
+
+      &:focus {
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 0px 2px;
+      }
+    }
+
+    &-submit {
+      background: #0084ff;
+      font-weight: 500;
+      color: var(--white) !important;
+      margin: 1rem 0px;
+      border: 0px !important;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        background: rgba(0, 132, 255, 0.9);
+        box-shadow: rgba(0, 132, 255, 0.3) 0px 0px 0px 3px !important;
+      }
+    }
+  }
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.075);
+
+    & p {
+      padding: 1.25rem 0px 0.25rem 0px;
+      font-size: 0.95rem;
+    }
+
+    & a {
+      font-size: 0.95rem;
+      text-decoration: underline;
+      color: #0084ff;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .auth {
+    &__card {
+      display: flex;
+      flex-direction: column;
+      margin: auto !important;
+      padding: 1.75rem 1.5rem;
+      max-width: 22rem;
+      background: var(--white);
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .auth {
+    &__card {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem auto;
+      padding: 1.75rem 1.5rem;
+      width: 85%;
+      background: var(--white);
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+// Checkbox CSS
+input[type="checkbox"],
+input[type="radio"] {
+  --active: #0084ff;
+  --white: #fff;
+  --focus: 2px rgba(0, 132, 255, 0.3);
+  --border: #bbc1e1;
+  --border-hover: #0084ff;
+  --background: #fff;
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  outline: none;
+  height: 21px;
+  padding: 0px;
+  margin: 0.75rem 0px 0.5rem 0.25rem;
+  cursor: pointer;
+  border: 1px solid var(--bc, var(--border));
+  background: var(--b, var(--background));
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+
+  &:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s);
+  }
+
+  &:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  }
+
+  &:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+
+    &:checked {
+      --b: var(--disabled-inner);
+      --bc: var(--border);
+    }
+
+    & + label {
+      cursor: not-allowed;
+    }
+  }
+
+  &:hover {
+    &:not(:checked) {
+      &:not(:disabled) {
+        --bc: var(--border-hover);
+      }
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+
+  &:not(.switch) {
+    width: 21px;
+
+    &:after {
+      opacity: var(--o, 0);
+    }
+
+    &:checked {
+      --o: 1;
+    }
+  }
+
+  & + label {
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 0.75rem;
+  }
+}
+
+input[type="checkbox"] {
+  &:not(.switch) {
+    border-radius: 0.2rem;
+
+    &:after {
+      width: 5px;
+      height: 9px;
+      border: 2px solid var(--white);
+      border-top: 0;
+      border-left: 0;
+      left: 7px;
+      top: 4px;
+      transform: rotate(var(--r, 20deg));
+    }
+
+    &:checked {
+      --r: 43deg;
+    }
+  }
+
+  &.switch {
+    width: 38px;
+    border-radius: 11px;
+
+    &:after {
+      left: 2px;
+      top: 2px;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      background: var(--ab, var(--border));
+      transform: translateX(var(--x, 0));
+    }
+
+    &:checked {
+      --ab: var(--white);
+      --x: 17px;
+    }
+
+    &:disabled {
+      &:not(:checked) {
+        &:after {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+
+  &:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--white);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+  }
+
+  &:checked {
+    --s: 0.5;
+  }
+}

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 import Loading from './components/Loading';
-import Auth from './components/Auth';
 import Login from './components/Login/Login';
+import Search from './components/Search';
 import Signup from './components/Signup';
 import HomePage from "./components/HomePage"
 import "./firebase.js";
@@ -10,8 +11,17 @@ import './App.scss';
 
 function App() {
   const [loader, setLoader] = useState(true);
+  const [userLoggedIn, setUserLoggedIn] = useState();
 
   useEffect(() => {
+    const user = getAuth().currentUser;
+    if (user) {
+      setUserLoggedIn(true);
+      console.log('Found user :' + user);
+    } else {
+      console.log('No user Found');
+      setUserLoggedIn(false);
+    }
     setLoader(null);
   }, []);
 
@@ -20,12 +30,17 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Route path="/auth" component={Auth} exact />
+    <div className="app" id="app">
       <Route path="/login" component={Login} exact />
       <Route path="/signup" component={Signup} exact />
-      <Route path="/" component={HomePage} exact />
-      <Redirect path="*" to="/" exact />
+      <Route path="/" exact>
+        <HomePage loggedin={userLoggedIn} />
+      </Route>
+      {userLoggedIn ? (
+        <Route path="/addstock" component={Search} exact />
+      ) : (
+        <Redirect from="*" to="/" />
+      )}
     </div>
   );
 }
