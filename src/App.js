@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Route, Redirect } from "react-router-dom";
-import { getAuth } from "firebase/auth";
 import Loading from './components/Loading';
 import Login from './components/Login/Login';
 import Search from './components/Search';
@@ -14,33 +14,41 @@ function App() {
   const [userLoggedIn, setUserLoggedIn] = useState();
 
   useEffect(() => {
-    const user = getAuth().currentUser;
-    if (user) {
-      setUserLoggedIn(true);
-      console.log('Found user :' + user);
-    } else {
-      console.log('No user Found');
-      setUserLoggedIn(false);
-    }
-    setLoader(null);
-  }, []);
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        console.log("User found : " + uid);
+        setUserLoggedIn(true);
+      } else {
+        console.log("No user found");
+        setUserLoggedIn(null);
+      }
+    });
+    setLoader(false);
+  }, [])
 
   if (loader) {
     return <Loading />;
+  }
+
+  if (userLoggedIn) {
+    return (
+      <div className="app" id="app">
+        <Route path="/" exact>
+          <HomePage loggedin={userLoggedIn} />
+        </Route>
+        <Route path="/addstock" component={Search} exact />
+        <Redirect from="*" to="/" />
+      </div>
+    )
   }
 
   return (
     <div className="app" id="app">
       <Route path="/login" component={Login} exact />
       <Route path="/signup" component={Signup} exact />
-      <Route path="/" exact>
-        <HomePage loggedin={userLoggedIn} />
-      </Route>
-      {userLoggedIn ? (
-        <Route path="/addstock" component={Search} exact />
-      ) : (
-        <Redirect from="*" to="/" />
-      )}
+      <Redirect from="/" to="/login" />
     </div>
   );
 }

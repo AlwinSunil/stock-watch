@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { Redirect, Link } from "react-router-dom";
 import "./Signup.scss"
 
 function Signup() {
@@ -7,6 +8,27 @@ function Signup() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [termsCheckbox, setTermsCheckbox] = useState();
+    const [userAccount] = useState();
+
+    const provider = new GoogleAuthProvider()
+    const auth = getAuth();
+
+    function signupwithGoogle() {
+        signInWithPopup(auth, provider).then((result) => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            console.log(result.user);
+            console.log("Token :" + token);
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            console.log(error);
+            console.log(errorCode + " : " + errorMessage);
+            console.log("Credential : " + credential);
+            console.log(error.email);
+        });
+    }
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -30,6 +52,10 @@ function Signup() {
         document.getElementById('app').style.height = 'auto';
     }, []);
 
+    if (userAccount) {
+        return <Redirect to="/" />
+    }
+
     return (
         <div className="auth">
             <div className="auth__card">
@@ -38,7 +64,7 @@ function Signup() {
                 </div>
                 <div className="auth__header">
                     <h3>Sign up</h3>
-                    <button><img src="/assets/icons/google-logo.svg" alt="" /> Sign up with Google</button>
+                    <button onClick={signupwithGoogle}><img src="/assets/icons/google-logo.svg" alt="" /> Sign up with Google</button>
                 </div>
                 <form className="auth__form">
                     <label>Name</label>
