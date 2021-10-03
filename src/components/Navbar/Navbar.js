@@ -13,7 +13,9 @@ function Navbar() {
     return (
         <div className="navbar">
             <img src="/assets/icons/logo-mobile.svg" alt="" />
-            <img onClick={signOutUser} className="navbar__avatar" src="/assets/icons/avatar.svg" alt="" />
+            <div className="navbar__avatar-container">
+                <img onClick={signOutUser} className="navbar__avatar" src="/assets/icons/avatar.svg" alt="" />
+            </div>
         </div>
     )
 }

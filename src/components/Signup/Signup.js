@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Redirect, Link } from "react-router-dom";
 import "./Signup.scss"
 
 function Signup() {
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [termsCheckbox, setTermsCheckbox] = useState();
     const [userAccount] = useState();
 
     const provider = new GoogleAuthProvider()
     const auth = getAuth();
 
-    function signupwithGoogle() {
+    const signupwithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
@@ -28,6 +28,23 @@ function Signup() {
             console.log("Credential : " + credential);
             console.log(error.email);
         });
+    }
+
+    const signupwithCredientials = () => {
+        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log("Error : " + errorCode);
+            console.log("Error : " + errorMessage);
+        });
+    }
+
+    const signupSubmit = (event) => {
+        event.preventDefault();
+        signupwithCredientials(auth, email, password);
     }
 
     const handleNameChange = (event) => {
@@ -77,7 +94,7 @@ function Signup() {
                         <input id="terms" type="checkbox" onChange={handleTermsChange} value={termsCheckbox} disabled={!name || !email || !password} />
                         <label htmlFor="terms">I agree with Terms and Privacy</label>
                     </div>
-                    <input className="auth__form-submit" type="submit" value="Sign up" disabled={!name || !email || !password || !termsCheckbox} />
+                    <input className="auth__form-submit" type="submit" value="Sign up" disabled={!name || !email || !password || !termsCheckbox} onClick={signupSubmit} />
                 </form>
                 <div className="auth__login">
                     <p>Already have an account?</p>

@@ -5,7 +5,7 @@ import Loading from './components/Loading';
 import Login from './components/Login/Login';
 import Search from './components/Search';
 import Signup from './components/Signup';
-import HomePage from "./components/HomePage"
+import HomePage from "./components/HomePage";
 import "./firebase.js";
 import './App.scss';
 
@@ -22,7 +22,7 @@ function App() {
         setUserLoggedIn(true);
       } else {
         console.log("No user found");
-        setUserLoggedIn(null);
+        setUserLoggedIn(false);
       }
     });
     setLoader(false);
@@ -32,7 +32,7 @@ function App() {
     return <Loading />;
   }
 
-  if (userLoggedIn) {
+  if (userLoggedIn === true) {
     return (
       <div className="app" id="app">
         <Route path="/" exact>
@@ -42,15 +42,17 @@ function App() {
         <Redirect from="*" to="/" />
       </div>
     )
+  } else if (userLoggedIn === false) {
+    return (
+      <div className="app" id="app">
+        <Route path="/login" component={Login} exact />
+        <Route path="/signup" component={Signup} exact />
+        <Redirect from="/" to="/login" />
+      </div>
+    )
   }
 
-  return (
-    <div className="app" id="app">
-      <Route path="/login" component={Login} exact />
-      <Route path="/signup" component={Signup} exact />
-      <Redirect from="/" to="/login" />
-    </div>
-  );
+  return <Loading />;
 }
 
 export default App;

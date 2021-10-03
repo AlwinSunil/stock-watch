@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Search.scss";
 
@@ -6,6 +6,10 @@ function Search() {
     const [searchDoc, setSearchDoc] = useState([]);
 
     const history = useHistory();
+
+    useEffect(() => {
+        document.title = "Search - Stock Watch"
+    }, [])
 
     const stocks = [{
         symbol: 'TSLA',
