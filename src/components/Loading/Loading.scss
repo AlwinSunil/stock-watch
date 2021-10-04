@@ -25,12 +25,11 @@
 }
 
 .sk__fading__circle .sk__circle:before {
-    content: '';
+    content: "";
     display: block;
     margin: 0 auto;
     width: 15%;
     height: 15%;
-    // background-color: var(--white);
     border-radius: 100%;
     -webkit-animation: sk__circleFadeDelay 1.2s infinite ease-in-out both;
     animation: sk__circleFadeDelay 1.2s infinite ease-in-out both;
@@ -158,7 +157,6 @@
 }
 
 @-webkit-keyframes sk__circleFadeDelay {
-
     0%,
     39%,
     100% {
@@ -171,7 +169,6 @@
 }
 
 @keyframes sk__circleFadeDelay {
-
     0%,
     39%,
     100% {
