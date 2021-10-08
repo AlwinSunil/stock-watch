@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Route, Redirect } from "react-router-dom";
 import Loading from "./components/Loading";
-import Login from "./components/Login";
-import Search from "./components/Search";
-import Signup from "./components/Signup";
-import HomePage from "./components/HomePage";
+import Login from "./pages/Login";
+import Search from "./pages/Search";
+import Signup from "./pages/Signup";
+import HomePage from "./pages/HomePage";
 import "./firebase.js";
 import "./App.scss";
 
