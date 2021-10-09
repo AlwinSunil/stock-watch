@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Route, Redirect } from "react-router-dom";
+import { UserProfileContext } from "./context/UserProfileContext";
 import Loading from "./components/Loading";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import Signup from "./pages/Signup";
 import HomePage from "./pages/HomePage";
+import Profile from "./pages/Profile";
 import "./firebase.js";
 import "./App.scss";
 
 function App() {
     const [loader, setLoader] = useState(true);
     const [userLoggedIn, setUserLoggedIn] = useState();
+    const [userProfile, setUserProfile] = useState();
 
     useEffect(() => {
         const auth = getAuth();
@@ -19,6 +22,9 @@ function App() {
             if (user) {
                 const uid = user.uid;
                 console.log("User found : " + uid);
+                // console.log(user.providerData[0]);
+                // console.log(user.auth.currentUser);
+                setUserProfile([user.providerData[0]]);
                 setUserLoggedIn(true);
             } else {
                 console.log("No user found");
@@ -35,11 +41,14 @@ function App() {
     if (userLoggedIn === true) {
         return (
             <div className="app" id="app">
-                <Route path="/" exact>
-                    <HomePage loggedin={userLoggedIn} />
-                </Route>
-                <Route path="/addstock" component={Search} exact />
-                <Redirect from="*" to="/" />
+                <UserProfileContext.Provider value={[userProfile]}>
+                    <Route path="/" exact>
+                        <HomePage loggedin={userLoggedIn} />
+                    </Route>
+                    <Route path="/addstock" component={Search} exact />
+                    <Route path="/profile" component={Profile} exact />
+                    <Redirect from="*" to="/" />
+                </UserProfileContext.Provider>
             </div>
         );
     } else if (userLoggedIn === false) {

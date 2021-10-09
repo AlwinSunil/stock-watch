@@ -14,7 +14,7 @@
         padding: 0.6rem !important;
 
         &-link {
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+            border: 1px solid var(--neutral-hover-v2);
             background: var(--neutral-bg);
             filter: saturate(150%);
             border-radius: 50%;
@@ -33,7 +33,7 @@
 
             &:hover {
                 cursor: pointer;
-                background: var(--neutral-bg);
+                background: var(--neutral-hover);
             }
 
             &:active {

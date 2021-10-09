@@ -4,11 +4,16 @@
 :root {
     --primary: #4845d2;
     --secondary: #a3a2ff;
+    --secondary-v2: #fffaf0;
     --neutral: #eeeeee;
     --neutral-bg: #f4f4f4;
-    --neutral-hover: #ededed;
+    --neutral-hover: #eeeeee;
+    --neutral-hover-v2: #e4e4e4;
     --text: #222222;
     --white: #ffffff;
+    --err: #ef4444;
+    --success: #34d399;
+    --opt: #3b82f6;
 }
 
 html {
@@ -35,7 +40,7 @@ body {
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease-in-out;
 }
 
 *:focus {
@@ -65,7 +70,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.75rem;
+    font-weight: 500;
 }
 
 h4 {

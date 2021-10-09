@@ -1,0 +1,60 @@
+.profile {
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid var(--neutral-bg);
+        background: var(--secondary-v2);
+        align-items: center;
+        padding: 2.5rem 1rem;
+        margin: 1rem;
+
+        &-img {
+            display: flex;
+            height: 7.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            padding: 1rem;
+            background: var(--secondary);
+
+            & img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        & h3 {
+            margin-top: 1rem;
+        }
+
+        & p {
+            opacity: 0.8;
+            padding: 0.25rem 0px;
+        }
+    }
+
+    &__settings {
+        margin: 1rem;
+    }
+}
+
+.usersettings-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--neutral-hover);
+    margin-bottom: -1px;
+
+    &:hover {
+        background: var(--neutral-bg);
+        cursor: pointer;
+    }
+
+    &:active {
+        opacity: 0.8;
+        transform: scale(0.99);
+    }
+}
+
+.usersettings-logout p {
+    color: var(--err);
+    font-weight: 600;
+}
