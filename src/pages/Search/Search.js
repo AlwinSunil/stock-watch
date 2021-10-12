@@ -85,7 +85,7 @@ function Search() {
                     </div>
                     <div className="searchbar">
                         <button className="searchbar__btn">
-                            <img src="/assets/icons/search.svg" alt="" />
+                            <img className="searchbar__btn-img" src="/assets/icons/search.svg" alt="" />
                         </button>
                         <input
                             type="text"
