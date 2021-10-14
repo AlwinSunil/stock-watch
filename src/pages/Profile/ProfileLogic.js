@@ -7,16 +7,6 @@ function ProfileLogic() {
     const [userProfile] = useContext(UserProfileContext);
     const [loginProviderGoogle, setLoginProviderGoogle] = useState();
 
-    /* ================= Sign out user ================= */
-    const signOutUser = () => {
-        const auth = getAuth();
-        signOut(auth)
-            .then(() => {})
-            .catch((error) => {
-                console.log(error);
-            });
-    };
-
     /* ================= Useeffect ================= */
     useEffect(() => {
         console.log(userProfile[0]);
@@ -27,6 +17,16 @@ function ProfileLogic() {
             setLoginProviderGoogle(false);
         }
     }, [userProfile]);
+
+    /* ================= Sign out user ================= */
+    const signOutUser = () => {
+        const auth = getAuth();
+        signOut(auth)
+            .then(() => {})
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     return {
         userProfile,

@@ -8,6 +8,8 @@ import Search from "./pages/Search";
 import Signup from "./pages/Signup";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
+import ProfileUpdate from "./pages/ProfileUpdate";
 import "./firebase.js";
 import "./App.scss";
 
@@ -47,6 +49,12 @@ function App() {
                     </Route>
                     <Route path="/addstock" component={Search} exact />
                     <Route path="/profile" component={Profile} exact />
+                    <Route path="/about" component={About} exact />
+                    <Route
+                        path="/updateprofile"
+                        component={ProfileUpdate}
+                        exact
+                    />
                     <Redirect from="*" to="/" />
                 </UserProfileContext.Provider>
             </div>

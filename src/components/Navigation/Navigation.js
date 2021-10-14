@@ -1,7 +1,7 @@
 import { useHistory } from "react-router";
 import "./Navigation.scss";
 
-function Navigation() {
+function Navigation(props) {
     const history = useHistory();
 
     return (
@@ -14,7 +14,7 @@ function Navigation() {
                     <img src="/assets/icons/back.svg" alt="" />
                 </div>
                 <div className="navigation__header">
-                    <p>Profile</p>
+                    <p>{props.header}</p>
                 </div>
             </div>
         </div>

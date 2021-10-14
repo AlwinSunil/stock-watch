@@ -1,4 +1,7 @@
 .profile {
+    height: calc(100vh - 4rem);
+    overflow-y: scroll;
+
     &__card {
         display: flex;
         flex-direction: column;
@@ -42,6 +45,19 @@
     padding: 0.5rem 1rem;
     border: 1px solid var(--neutral-hover);
     margin-bottom: -1px;
+    display: block;
+
+    &-disable {
+        &:hover {
+            background: var(--white) !important;
+            cursor: default !important;
+        }
+
+        &:active {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+        }
+    }
 
     &:hover {
         background: var(--neutral-bg);
@@ -57,4 +73,16 @@
 .usersettings-logout p {
     color: var(--err);
     font-weight: 600;
+}
+
+.version {
+    &-title {
+        padding: 0.2rem 0px 0.2rem 0px;
+    }
+
+    &-v {
+        padding: 0px 0px 0.2rem 0px;
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
 }

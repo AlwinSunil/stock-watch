@@ -41,7 +41,7 @@ body {
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out, border-radius 0s linear;
 }
 
 *:focus {
