@@ -19,30 +19,6 @@
     &:active {
         opacity: 0.9;
         transform: scale(1);
-    }
-}
-
-.app {
-    width: 100vw;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.btn {
-    &:hover {
-        transform: scale(1.05);
-        cursor: pointer;
-    }
-
-    & img:hover {
-        background-color: var(--neutral-hover);
-    }
-
-    &:active {
-        opacity: 0.9;
-        transform: scale(1);
         border-radius: 50%;
     }
 }

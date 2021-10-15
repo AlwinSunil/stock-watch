@@ -1,4 +1,13 @@
 .profileupdate {
     height: calc(100vh - 4rem);
-    overflow-y: scroll;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    &__form {
+        width: 30rem;
+        padding: 2rem;
+        margin: auto;
+    }
 }

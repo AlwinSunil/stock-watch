@@ -24,8 +24,6 @@ function App() {
             if (user) {
                 const uid = user.uid;
                 console.log("User found : " + uid);
-                // console.log(user.providerData[0]);
-                // console.log(user.auth.currentUser);
                 setUserProfile([user.providerData[0]]);
                 setUserLoggedIn(true);
             } else {
