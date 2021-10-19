@@ -1,0 +1,26 @@
+.profileupdate__form {
+    & input[type="file"] {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    & input[type="file"]::placeholder {
+        padding-left: 0.75rem;
+    }
+
+    & input[type="file"]::file-selector-button {
+        font-family: "Inter", sans-serif;
+        border: 1px solid var(--neutral-hover-v2);
+        text-align: center;
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.2rem;
+        background: var(--white);
+        color: var(--text);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

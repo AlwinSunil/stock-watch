@@ -1,5 +1,6 @@
 import Navigation from "../../components/Navigation";
 import ProfileLogic from "./ProfileLogic";
+import UpdatePassword from "../../components/UpdatePassword";
 import { Link } from "react-router-dom";
 import "./Profile.scss";
 
@@ -26,11 +27,7 @@ function Profile() {
                     </div>
                 ))}
                 <div className="profile__settings">
-                    {loginProviderGoogle ? null : (
-                        <div className="usersettings-btn">
-                            <p>Reset Password</p>
-                        </div>
-                    )}
+                    {loginProviderGoogle ? null : <UpdatePassword />}
                     <Link className="usersettings-btn" to="/updateprofile">
                         <p>Update Profile</p>
                     </Link>

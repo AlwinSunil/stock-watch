@@ -6,8 +6,15 @@
     margin: 1rem;
 
     &__form {
-        width: 30rem;
-        padding: 2rem;
-        margin: auto;
+        background: var(--neutral-bg-light);
+    }
+}
+
+@media (min-width: 700px) {
+    .profileupdate {
+        &__form {
+            width: 100%;
+            padding: 2rem 32vw;
+        }
     }
 }
