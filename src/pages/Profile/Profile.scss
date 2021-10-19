@@ -86,3 +86,10 @@
         opacity: 0.8;
     }
 }
+
+@media (min-width: 640px) {
+    .profile {
+        width: 55%;
+        margin: auto;
+    }
+}
