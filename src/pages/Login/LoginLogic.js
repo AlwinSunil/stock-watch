@@ -74,7 +74,7 @@ const LoginLogin = () => {
 
     useEffect(() => {
         document.title = "Log in - Stock Watch";
-        document.getElementById("app").style.overflow = "auto";
+        document.getElementById("app").style.overflowY = "auto";
     }, []);
 
     return {

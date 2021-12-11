@@ -10,6 +10,7 @@ function HomePage(props) {
 
     useEffect(() => {
         document.title = "Console - Stock Watch";
+
         if (props.loggedin === true) {
             setUserLoggedIn(true);
         } else {
