@@ -1,7 +1,6 @@
 # Stock watch
 
 Watch your favorite stocks.
-<br/>
 
 ## Development
 
@@ -13,14 +12,10 @@ Watch your favorite stocks.
 | **Lint**               | `npm run pretty` | prettier --write \"./\*_/_.{js,jsx,json,sass,css}\| |
 | **Deploy**             | `vercel`         | first **`npm i -g vercel`** to use this command     |
 
-<br/>
-
 ## Deploy
 
 Deployed in **vercel**.<br/>
 [Link to the project, (Temporary)](https://stock-watch-vitejs.vercel.app/)
-
-<br/>
 
 ## Configuration
 
@@ -28,8 +23,6 @@ Deployed in **vercel**.<br/>
 | ---------- | -------------------------------------------------- |
 | Build tool | `[vitejs](https://vitejs.dev/guide)`               |
 | Linter     | `[prettier`](https://prettier.io/docs/en/cli.html) |
-
-<br/>
 
 ## Prettier Configuration
 
