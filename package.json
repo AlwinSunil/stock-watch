@@ -1,11 +1,11 @@
 {
     "name": "stock-watch-vitejs",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "serve": "vite preview",
-        "pretty": "prettier --write \"./**/*.{js,jsx,json,sass,css}\""
+        "pretty": "prettier --write \"./**/*.{js,jsx,json,scss,css,sass}\""
     },
     "dependencies": {
         "axios": "^0.24.0",

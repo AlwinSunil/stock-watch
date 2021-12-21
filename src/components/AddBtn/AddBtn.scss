@@ -1,42 +1,42 @@
 .addstock {
-  padding: 1rem;
-  border: 1px solid var(--neutral-hover);
-  z-index: 99;
-  height: 5rem;
+    &-btn {
+        background: var(--primary);
+        border-radius: 0.65rem;
+        bottom: 3%;
+        box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+            rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+        display: flex;
+        padding: 0.3rem 0.7rem;
+        position: absolute;
+        right: 5%;
+        width: 9rem;
+        z-index: 100;
 
-  &-btn {
-    background: var(--primary);
-    padding: 0.4rem 0.75rem;
-    border-radius: 0.1rem;
-    display: flex;
-    width: 100%;
-    border: 0px;
+        & img {
+            padding: 0.2rem;
+            margin: auto 0px auto auto;
+            width: 2rem;
+        }
 
-    & img {
-      padding: 0.2rem;
-      margin: auto 0px auto auto;
-      width: 2rem;
+        & p {
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-align: center;
+            margin-right: auto;
+            padding-left: 0.25rem;
+            border: 0px;
+        }
+
+        &:hover {
+            transform: scale(1.0075) !important;
+            cursor: pointer;
+        }
+
+        &:active {
+            opacity: 0.9;
+            transform: scale(1) !important;
+        }
     }
-
-    & p {
-      background: var(--primary);
-      color: var(--white);
-      font-size: 1rem;
-      font-weight: 500;
-      text-align: center;
-      margin-right: auto;
-      padding-left: 0.25rem;
-      border: 0px;
-    }
-
-    &:hover {
-      transform: scale(1.0075) !important;
-      cursor: pointer;
-    }
-
-    &:active {
-      opacity: 0.9;
-      transform: scale(1) !important;
-    }
-  }
 }
