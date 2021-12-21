@@ -1,3 +1,4 @@
+import React from "react";
 import Navigation from "../../components/Navigation";
 import ProfileLogic from "./ProfileLogic";
 import UpdatePassword from "../../components/UpdatePassword";

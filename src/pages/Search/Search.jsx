@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Search.scss";
 
 function Search() {
     const [searchDoc, setSearchDoc] = useState([]);
-    const history = useHistory();
+    let navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Search - Stock Watch";
@@ -79,7 +79,7 @@ function Search() {
                 <div className="searchbar__holder">
                     <div
                         className="btn navigation__back"
-                        onClick={() => history.goBack()}
+                        onClick={() => navigate(-1)}
                     >
                         <img src="/assets/icons/back.svg" alt="" />
                     </div>

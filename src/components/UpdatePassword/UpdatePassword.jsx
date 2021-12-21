@@ -1,4 +1,5 @@
-import UpdatePasswordLogic from "./UpdatePasswordLogic.js";
+import React from "react";
+import UpdatePasswordLogic from "./UpdatePasswordLogic.jsx";
 
 function UpdatePassword() {
     const { isActive, setIsActive, showPassword } = UpdatePasswordLogic();

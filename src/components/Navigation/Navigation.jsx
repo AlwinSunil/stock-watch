@@ -1,15 +1,16 @@
-import { useHistory } from "react-router";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Navigation.scss";
 
 function Navigation(props) {
-    const history = useHistory();
+    let navigate = useNavigate();
 
     return (
         <div className="navigation">
             <div className="navigation__container">
                 <div
                     className="btn navigation__goback"
-                    onClick={() => history.goBack()}
+                    onClick={() => navigate(-1)}
                 >
                     <img src="/assets/icons/back.svg" alt="" />
                 </div>

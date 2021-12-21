@@ -1,21 +1,25 @@
-import { Redirect, Link } from "react-router-dom";
-import LoginLogic from "./LoginLogic";
-import "./Login.scss";
+import React from "react";
+import { Navigate, Link } from "react-router-dom";
+import SignupLogic from "./SignupLogic";
+import "./Signup.scss";
 
-function Login() {
+function Signup() {
     const {
+        name,
         email,
         password,
+        termsCheckbox,
         userAccount,
-        loginwithGoogle,
-        showPassword,
-        loginSubmit,
+        signupSubmit,
+        signupwithGoogle,
+        handleNameChange,
         handleEmailChange,
         handlePasswordChange,
-    } = LoginLogic();
+        handleTermsChange,
+    } = SignupLogic();
 
     if (userAccount) {
-        return <Redirect to="/" />;
+        return <Navigate to="/" />;
     }
 
     return (
@@ -25,13 +29,19 @@ function Login() {
                     <img src="/assets/icons/logo-opt.svg" alt="" />
                 </div>
                 <div className="auth__header">
-                    <h3>Log in</h3>
-                    <button onClick={loginwithGoogle}>
-                        <img src="/assets/icons/google-logo.svg" alt="" />
-                        Log in with Google
+                    <h3>Sign up</h3>
+                    <button onClick={signupwithGoogle}>
+                        <img src="/assets/icons/google-logo.svg" alt="" /> Sign
+                        up with Google
                     </button>
                 </div>
                 <form className="auth__form">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        onChange={handleNameChange}
+                        value={name}
+                    />
                     <label>Email</label>
                     <input
                         type="email"
@@ -43,31 +53,36 @@ function Login() {
                         type="password"
                         onChange={handlePasswordChange}
                         value={password}
-                        id="loginPassInput"
                     />
                     <div className="auth__form-terms">
                         <input
                             id="terms"
                             type="checkbox"
-                            onClick={showPassword}
+                            onChange={handleTermsChange}
+                            value={termsCheckbox}
+                            disabled={!name || !email || !password}
                         />
-                        <label htmlFor="terms">Show Password</label>
+                        <label htmlFor="terms">
+                            I agree with Terms and Privacy
+                        </label>
                     </div>
                     <input
                         className="auth__form-submit"
                         type="submit"
-                        value="Log in"
-                        disabled={!email || !password}
-                        onClick={loginSubmit}
+                        value="Sign up"
+                        disabled={
+                            !name || !email || !password || !termsCheckbox
+                        }
+                        onClick={signupSubmit}
                     />
                 </form>
                 <div className="auth__login">
-                    <p>Don't have an account?</p>
-                    <Link to="/signup">Sign up</Link>
+                    <p>Already have an account?</p>
+                    <Link to="/login">Log in</Link>
                 </div>
             </div>
         </div>
     );
 }
 
-export default Login;
+export default Signup;

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { UserProfileContext } from "../../context/UserProfileContext";

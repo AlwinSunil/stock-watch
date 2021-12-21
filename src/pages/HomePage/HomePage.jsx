@@ -1,5 +1,6 @@
+import React from "react";
 import { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Loading from "../../components/Loading";
 import Navbar from "../../components/Navbar";
 import AddBtn from "../../components/AddBtn";
@@ -27,7 +28,7 @@ function HomePage(props) {
             </>
         );
     } else if (userLoggedIn === false) {
-        return <Redirect to="/login" />;
+        return <Navigate to="/login" />;
     } else {
         return <Loading />;
     }

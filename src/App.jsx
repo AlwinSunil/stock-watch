@@ -1,6 +1,7 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { UserProfileContext } from "./context/UserProfileContext";
 import Loading from "./components/Loading";
 import Login from "./pages/Login";
@@ -10,7 +11,7 @@ import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import ProfileUpdate from "./pages/ProfileUpdate";
-import "./firebase.js";
+import "./firebase.jsx";
 import "./App.scss";
 
 function App() {
@@ -42,27 +43,29 @@ function App() {
         return (
             <div className="app" id="app">
                 <UserProfileContext.Provider value={[userProfile]}>
-                    <Route path="/" exact>
-                        <HomePage loggedin={userLoggedIn} />
-                    </Route>
-                    <Route path="/addstock" component={Search} exact />
-                    <Route path="/profile" component={Profile} exact />
-                    <Route path="/about" component={About} exact />
-                    <Route
-                        path="/updateprofile"
-                        component={ProfileUpdate}
-                        exact
-                    />
-                    <Redirect from="*" to="/" />
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={<HomePage loggedin={userLoggedIn} />}
+                        />
+                        <Route path="/addstock" element={<Search />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/updateprofile" element={<About />} />
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </Routes>
                 </UserProfileContext.Provider>
             </div>
         );
     } else if (userLoggedIn === false) {
         return (
             <div className="app" id="app">
-                <Route path="/login" component={Login} exact />
-                <Route path="/signup" component={Signup} exact />
-                <Redirect from="/" to="/login" />
+                <Routes>
+                    <Route path="/" element={<Navigate to="/login" />} />
+                    <Route path="*" element={<Navigate to="/" />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                </Routes>
             </div>
         );
     }
