@@ -51,7 +51,7 @@ function App() {
                         <Route path="/addstock" element={<Search />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/updateprofile" element={<About />} />
+                        <Route path="/updateprofile" element={<ProfileUpdate />} />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
                 </UserProfileContext.Provider>
