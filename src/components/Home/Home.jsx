@@ -1,11 +1,11 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Home.scss";
 
 function Home() {
     const [stockResult, setStockResult] = useState([]);
 
-    const stocks = ["TSLA", "GOOGL", "MSFT", "AAPL"];
+    const stocks = ["TSLA", "GOOGL", "MSFT", "AAPL", "MDB", "DIS"];
 
     useEffect(() => {
         const result = [];
@@ -56,7 +56,13 @@ function Home() {
                         </div>
                     </div>
                 ))}
-                {stockResult && <>{JSON.stringify(stockResult)}</>}
+                {stockResult && (
+                    <>
+                        <p style={{ overflowWrap: "break-word" }}>
+                            {JSON.stringify(stockResult)}
+                        </p>
+                    </>
+                )}
             </div>
         </div>
     );

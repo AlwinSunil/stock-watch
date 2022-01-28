@@ -13,6 +13,7 @@ import About from "./pages/About";
 import ProfileUpdate from "./pages/ProfileUpdate";
 import "./firebase.jsx";
 import "./App.scss";
+import StockDetails from "./pages/StockDetails";
 
 function App() {
     const [loader, setLoader] = useState(true);
@@ -27,11 +28,20 @@ function App() {
                 console.log("User found : " + uid);
                 setUserProfile([user.providerData[0]]);
                 setUserLoggedIn(true);
+                const doc = {
+                    _id: user.providerData[0].uid,
+                    _type: "user",
+                    userName: user.providerData[0].displayName,
+                    email: user.providerData[0].email,
+                    userId: user.providerData[0].uid,
+                    image: user.providerData[0].photoURL,
+                };
             } else {
                 console.log("No user found");
                 setUserLoggedIn(false);
             }
         });
+
         setLoader(false);
     }, []);
 
@@ -56,6 +66,7 @@ function App() {
                             element={<ProfileUpdate />}
                         />
                         <Route path="*" element={<Navigate to="/" />} />
+                        <Route path="/:stock" element={<StockDetails />} />
                     </Routes>
                 </UserProfileContext.Provider>
             </div>

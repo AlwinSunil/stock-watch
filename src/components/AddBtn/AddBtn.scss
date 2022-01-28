@@ -8,7 +8,7 @@
         display: flex;
         padding: 0.3rem 0.7rem;
         position: absolute;
-        right: 5%;
+        right: 4.75%;
         width: 9rem;
         z-index: 100;
 
@@ -30,13 +30,21 @@
         }
 
         &:hover {
-            transform: scale(1.0075) !important;
+            transform: scale(1.0025) !important;
             cursor: pointer;
         }
 
         &:active {
             opacity: 0.9;
             transform: scale(1) !important;
+        }
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .addstock {
+        &-btn {
+            right: 2.5%;
         }
     }
 }
