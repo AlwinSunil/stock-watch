@@ -11,9 +11,9 @@ import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import ProfileUpdate from "./pages/ProfileUpdate";
+import StockDetails from "./pages/StockDetails";
 import "./firebase.jsx";
 import "./App.scss";
-import StockDetails from "./pages/StockDetails";
 
 function App() {
     const [loader, setLoader] = useState(true);
