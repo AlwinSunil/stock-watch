@@ -1,1 +1,1 @@
-export { default } from "./UpdateName";
+export {default} from "./UpdateName"

@@ -1,9 +1,9 @@
-import React from "react";
-import Navigation from "../../components/Navigation";
-import UpdateDP from "../../components/UpdateDP";
-import UpdateName from "../../components/UpdateName";
-import UpdatePassword from "../../components/UpdatePassword";
-import "./ProfileUpdate.scss";
+import React from "react"
+import Navigation from "../../components/Navigation"
+import UpdateDP from "../../components/UpdateDP"
+import UpdateName from "../../components/UpdateName"
+import UpdatePassword from "../../components/UpdatePassword"
+import "./ProfileUpdate.scss"
 
 function UpdateProfile() {
     return (
@@ -15,7 +15,7 @@ function UpdateProfile() {
                 <UpdateDP />
             </div>
         </>
-    );
+    )
 }
 
-export default UpdateProfile;
+export default UpdateProfile

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import "./UpdateDP.scss";
+import React, {useState} from "react"
+import "./UpdateDP.scss"
 
 function UpdateDP() {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false)
 
     return (
         <div className="usersettings-holder">
@@ -24,7 +24,7 @@ function UpdateDP() {
                 </form>
             )}
         </div>
-    );
+    )
 }
 
-export default UpdateDP;
+export default UpdateDP

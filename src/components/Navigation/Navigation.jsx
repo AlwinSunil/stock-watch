@@ -1,9 +1,9 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./Navigation.scss";
+import React from "react"
+import {useNavigate} from "react-router-dom"
+import "./Navigation.scss"
 
 function Navigation(props) {
-    let navigate = useNavigate();
+    let navigate = useNavigate()
 
     return (
         <div className="navigation">
@@ -19,7 +19,7 @@ function Navigation(props) {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Navigation;
+export default Navigation

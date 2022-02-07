@@ -1,23 +1,23 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import Loading from "../../components/Loading";
-import Navbar from "../../components/Navbar";
-import AddBtn from "../../components/AddBtn";
-import Home from "../../components/Home";
+import React from "react"
+import {useEffect, useState} from "react"
+import {Navigate} from "react-router-dom"
+import Loading from "../../components/Loading"
+import Navbar from "../../components/Navbar"
+import AddBtn from "../../components/AddBtn"
+import Home from "../../components/Home"
 
 function HomePage(props) {
-    const [userLoggedIn, setUserLoggedIn] = useState();
+    const [userLoggedIn, setUserLoggedIn] = useState()
 
     useEffect(() => {
-        document.title = "Console - Stock Watch";
+        document.title = "Console - Stock Watch"
 
         if (props.loggedin === true) {
-            setUserLoggedIn(true);
+            setUserLoggedIn(true)
         } else {
-            setUserLoggedIn(false);
+            setUserLoggedIn(false)
         }
-    }, [props.loggedin]);
+    }, [props.loggedin])
 
     if (userLoggedIn === true) {
         return (
@@ -26,12 +26,12 @@ function HomePage(props) {
                 <AddBtn />
                 <Home />
             </>
-        );
+        )
     } else if (userLoggedIn === false) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/login" />
     } else {
-        return <Loading />;
+        return <Loading />
     }
 }
 
-export default HomePage;
+export default HomePage

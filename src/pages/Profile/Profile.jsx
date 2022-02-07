@@ -1,12 +1,12 @@
-import React from "react";
-import Navigation from "../../components/Navigation";
-import ProfileLogic from "./ProfileLogic";
-import UpdatePassword from "../../components/UpdatePassword";
-import { Link } from "react-router-dom";
-import "./Profile.scss";
+import React from "react"
+import Navigation from "../../components/Navigation"
+import ProfileLogic from "./ProfileLogic"
+import UpdatePassword from "../../components/UpdatePassword"
+import {Link} from "react-router-dom"
+import "./Profile.scss"
 
 function Profile() {
-    const { userProfile, loginProviderGoogle, signOutUser } = ProfileLogic();
+    const {userProfile, loginProviderGoogle, signOutUser} = ProfileLogic()
 
     return (
         <>
@@ -19,7 +19,7 @@ function Profile() {
                     >
                         <div className="profile__card-img">
                             <img
-                                src={`https://avatars.dicebear.com/api/male/john.svg?background=%23a3a2ff`}
+                                src={`https://avatars.dicebear.com/api/initials/alwinsunil.svg`}
                                 alt=""
                             />
                         </div>
@@ -53,7 +53,7 @@ function Profile() {
                 </div>
             </div>
         </>
-    );
+    )
 }
 
-export default Profile;
+export default Profile

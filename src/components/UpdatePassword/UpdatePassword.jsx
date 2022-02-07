@@ -1,8 +1,8 @@
-import React from "react";
-import UpdatePasswordLogic from "./UpdatePasswordLogic.jsx";
+import React from "react"
+import UpdatePasswordLogic from "./UpdatePasswordLogic.jsx"
 
 function UpdatePassword() {
-    const { isActive, setIsActive, showPassword } = UpdatePasswordLogic();
+    const {isActive, setIsActive, showPassword} = UpdatePasswordLogic()
 
     return (
         <div className="usersettings-holder">
@@ -34,7 +34,7 @@ function UpdatePassword() {
                 </form>
             )}
         </div>
-    );
+    )
 }
 
-export default UpdatePassword;
+export default UpdatePassword

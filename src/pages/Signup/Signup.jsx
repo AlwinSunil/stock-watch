@@ -1,7 +1,7 @@
-import React from "react";
-import { Navigate, Link } from "react-router-dom";
-import SignupLogic from "./SignupLogic";
-import "./Signup.scss";
+import React from "react"
+import {Navigate, Link} from "react-router-dom"
+import SignupLogic from "./SignupLogic"
+import "./Signup.scss"
 
 function Signup() {
     const {
@@ -16,10 +16,10 @@ function Signup() {
         handleEmailChange,
         handlePasswordChange,
         handleTermsChange,
-    } = SignupLogic();
+    } = SignupLogic()
 
     if (userAccount) {
-        return <Navigate to="/" />;
+        return <Navigate to="/" />
     }
 
     return (
@@ -82,7 +82,7 @@ function Signup() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Signup;
+export default Signup

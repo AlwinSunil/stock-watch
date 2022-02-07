@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import "./UpdateName.scss";
+import React, {useState} from "react"
+import "./UpdateName.scss"
 
 function UpdateName() {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false)
 
     return (
         <div className="usersettings-holder">
@@ -24,7 +24,7 @@ function UpdateName() {
                 </form>
             )}
         </div>
-    );
+    )
 }
 
-export default UpdateName;
+export default UpdateName

@@ -1,5 +1,5 @@
-import React from "react";
-import "./Loading.scss";
+import React from "react"
+import "./Loading.scss"
 
 function Loading() {
     return (
@@ -20,7 +20,7 @@ function Loading() {
                 <div className="sk__circle12 sk__circle"></div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Loading;
+export default Loading

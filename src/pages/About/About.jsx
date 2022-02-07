@@ -1,6 +1,6 @@
-import React from "react";
-import Navigation from "../../components/Navigation";
-import "./About.scss";
+import React from "react"
+import Navigation from "../../components/Navigation"
+import "./About.scss"
 
 function About() {
     return (
@@ -10,7 +10,7 @@ function About() {
                 <div className="about__header"></div>
             </div>
         </>
-    );
+    )
 }
 
-export default About;
+export default About

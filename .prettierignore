@@ -2,6 +2,7 @@
 build
 dist
 coverage
+.vercel
 
 # Ignore all HTML files:
 *.html

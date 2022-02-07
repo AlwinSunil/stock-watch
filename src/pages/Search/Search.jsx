@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Search.scss";
+import React, {useState, useEffect} from "react"
+import {useNavigate} from "react-router-dom"
+import "./Search.scss"
 
 function Search() {
-    const [searchDoc, setSearchDoc] = useState([]);
-    let navigate = useNavigate();
+    const [searchDoc, setSearchDoc] = useState([])
+    let navigate = useNavigate()
 
     useEffect(() => {
-        document.title = "Search - Stock Watch";
-    }, []);
+        document.title = "Search - Stock Watch"
+    }, [])
 
     const stocks = [
         {
@@ -71,7 +71,7 @@ function Search() {
             priceinst: "774.39 USD",
             growth: "+20.75",
         },
-    ];
+    ]
 
     return (
         <div className="search">
@@ -121,7 +121,7 @@ function Search() {
                 ))}
             </div>
         </div>
-    );
+    )
 }
 
-export default Search;
+export default Search

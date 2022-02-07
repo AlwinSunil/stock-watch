@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, {useState} from "react"
 
 function UpdatePasswordLogic() {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false)
 
     const showPassword = () => {
-        const passwordInput = document.getElementById("updatepassword");
+        const passwordInput = document.getElementById("updatepassword")
         const passwordInputReEnter =
-            document.getElementById("updatepassword-re");
+            document.getElementById("updatepassword-re")
         if (passwordInput.type === "password") {
-            passwordInput.type = "text";
+            passwordInput.type = "text"
         } else {
-            passwordInput.type = "password";
+            passwordInput.type = "password"
         }
         if (passwordInputReEnter.type === "password") {
-            passwordInputReEnter.type = "text";
+            passwordInputReEnter.type = "text"
         } else {
-            passwordInputReEnter.type = "password";
+            passwordInputReEnter.type = "password"
         }
-    };
-    return { isActive, setIsActive, showPassword };
+    }
+    return {isActive, setIsActive, showPassword}
 }
 
-export default UpdatePasswordLogic;
+export default UpdatePasswordLogic

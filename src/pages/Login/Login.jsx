@@ -1,7 +1,7 @@
-import React from "react";
-import { Navigate, Link } from "react-router-dom";
-import LoginLogic from "./LoginLogic";
-import "./Login.scss";
+import React from "react"
+import {Navigate, Link} from "react-router-dom"
+import LoginLogic from "./LoginLogic"
+import "./Login.scss"
 
 function Login() {
     const {
@@ -13,10 +13,10 @@ function Login() {
         loginSubmit,
         handleEmailChange,
         handlePasswordChange,
-    } = LoginLogic();
+    } = LoginLogic()
 
     if (userAccount) {
-        return <Navigate to="/" />;
+        return <Navigate to="/" />
     }
 
     return (
@@ -68,7 +68,7 @@ function Login() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Login;
+export default Login

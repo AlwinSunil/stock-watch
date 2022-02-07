@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./Home.scss";
+import React, {useEffect, useState} from "react"
+import axios from "axios"
+import "./Home.scss"
 
 function Home() {
-    const [stockResult, setStockResult] = useState([]);
+    const [stockResult, setStockResult] = useState([])
 
-    const stocks = ["TSLA", "GOOGL", "MSFT", "AAPL", "MDB", "DIS"];
+    const stocks = ["TSLA", "GOOGL", "MSFT", "AAPL", "MDB", "DIS"]
 
     useEffect(() => {
-        const result = [];
         axios({
             method: "get",
-            url: `https://${process.env.VERCEL_URL}/api/stock?symbol=AAPL`,
+            url: `https://stock-watch-vitejs.vercel.app/api/stock?symbol=AAPL`,
         }).then((res) => {
-            console.log(res.data);
-        });
-        console.log(result);
-    }, []);
+            console.log(res.data)
+        })
+    }, [])
 
     return (
         <div className="home">
@@ -37,14 +35,14 @@ function Home() {
                 ))}
                 {stockResult && (
                     <>
-                        <p style={{ overflowWrap: "break-word" }}>
+                        <p style={{overflowWrap: "break-word"}}>
                             {JSON.stringify(stockResult)}
                         </p>
                     </>
                 )}
             </div>
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Home

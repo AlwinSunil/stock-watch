@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.scss";
+import React from "react"
+import {Link} from "react-router-dom"
+import "./Navbar.scss"
 
 function Navbar() {
     return (
@@ -16,7 +16,7 @@ function Navbar() {
                 </Link>
             </div>
         </div>
-    );
+    )
 }
 
-export default Navbar;
+export default Navbar

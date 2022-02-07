@@ -1,1 +1,1 @@
-export { default } from "./UpdateDP";
+export {default} from "./UpdateDP"
