@@ -2,7 +2,7 @@ import React from "react"
 import UpdatePasswordLogic from "./UpdatePasswordLogic.jsx"
 
 function UpdatePassword() {
-    const {isActive, setIsActive, showPassword} = UpdatePasswordLogic()
+    const { isActive, setIsActive, showPassword } = UpdatePasswordLogic()
 
     return (
         <div className="usersettings-holder">

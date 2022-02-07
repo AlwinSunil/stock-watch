@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import "./UpdateName.scss"
 
 function UpdateName() {

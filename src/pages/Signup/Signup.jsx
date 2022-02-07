@@ -1,5 +1,5 @@
 import React from "react"
-import {Navigate, Link} from "react-router-dom"
+import { Navigate, Link } from "react-router-dom"
 import SignupLogic from "./SignupLogic"
 import "./Signup.scss"
 

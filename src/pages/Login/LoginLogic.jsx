@@ -1,5 +1,4 @@
-import React from "react"
-import {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import {
     getAuth,
     signInWithEmailAndPassword,
@@ -10,7 +9,6 @@ import {
 const LoginLogin = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [userAccount] = useState()
 
     const provider = new GoogleAuthProvider()
     const auth = getAuth()
@@ -22,6 +20,7 @@ const LoginLogin = () => {
                     GoogleAuthProvider.credentialFromResult(result)
                 const token = credential.accessToken
                 console.log(result.user)
+                console.log(result.user.providerData[0])
                 console.log("Token :" + token)
             })
             .catch((error) => {
@@ -80,7 +79,6 @@ const LoginLogin = () => {
     return {
         email,
         password,
-        userAccount,
         loginwithGoogle,
         showPassword,
         loginSubmit,

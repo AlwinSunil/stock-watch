@@ -1,6 +1,6 @@
 import React from "react"
-import {initializeApp} from "firebase/app"
-import {getAnalytics} from "firebase/analytics"
+import { initializeApp } from "firebase/app"
+import { getAnalytics } from "firebase/analytics"
 
 const firebaseConfig = {
     apiKey: "AIzaSyCrKqDTg9BnbWWSYFFt2hyWfRVDuuR0w_4",

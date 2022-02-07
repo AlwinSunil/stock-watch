@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
 function UpdatePasswordLogic() {
     const [isActive, setIsActive] = useState(false)
@@ -18,7 +18,7 @@ function UpdatePasswordLogic() {
             passwordInputReEnter.type = "password"
         }
     }
-    return {isActive, setIsActive, showPassword}
+    return { isActive, setIsActive, showPassword }
 }
 
 export default UpdatePasswordLogic

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import "./Home.scss"
 
@@ -35,7 +35,7 @@ function Home() {
                 ))}
                 {stockResult && (
                     <>
-                        <p style={{overflowWrap: "break-word"}}>
+                        <p style={{ overflowWrap: "break-word" }}>
                             {JSON.stringify(stockResult)}
                         </p>
                     </>

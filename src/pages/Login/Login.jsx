@@ -1,5 +1,5 @@
 import React from "react"
-import {Navigate, Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import LoginLogic from "./LoginLogic"
 import "./Login.scss"
 
@@ -7,17 +7,12 @@ function Login() {
     const {
         email,
         password,
-        userAccount,
         loginwithGoogle,
         showPassword,
         loginSubmit,
         handleEmailChange,
         handlePasswordChange,
     } = LoginLogic()
-
-    if (userAccount) {
-        return <Navigate to="/" />
-    }
 
     return (
         <div className="auth">

@@ -2,7 +2,6 @@
     "tabWidth": 4,
     "singleQuote": false,
     "semi": false,
-    "bracketSpacing": false,
     "bracketSameLine": false,
     "arrowParens": "always"
 }

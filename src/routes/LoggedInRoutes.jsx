@@ -1,6 +1,5 @@
-import React, {useContext} from "react"
-import {Routes, Route, Navigate} from "react-router-dom"
-import {UserLoggedInContext} from "./../context/UserLoggedInContext"
+import React from "react"
+import { Routes, Route, Navigate } from "react-router-dom"
 import About from "./../pages/About"
 import HomePage from "./../pages/HomePage"
 import Profile from "./../pages/Profile"
@@ -9,13 +8,11 @@ import Search from "./../pages/Search"
 import StockDetails from "./../pages/StockDetails"
 
 function LoggedInRoutes() {
-    const [userLoggedIn] = useContext(UserLoggedInContext)
-
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/" />} />
-            <Route path="/:stock" element={<StockDetails />} />
-            <Route path="/" element={<HomePage loggedin={userLoggedIn} />} />
+            <Route path="/symbol=:stock" element={<StockDetails />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/addstock" element={<Search />} />
             <Route path="/profile" element={<Profile />} />

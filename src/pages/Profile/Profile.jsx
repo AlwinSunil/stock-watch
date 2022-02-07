@@ -2,11 +2,11 @@ import React from "react"
 import Navigation from "../../components/Navigation"
 import ProfileLogic from "./ProfileLogic"
 import UpdatePassword from "../../components/UpdatePassword"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Profile.scss"
 
 function Profile() {
-    const {userProfile, loginProviderGoogle, signOutUser} = ProfileLogic()
+    const { userProfile, loginProviderGoogle, signOutUser } = ProfileLogic()
 
     return (
         <>
