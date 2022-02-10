@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import axios from "axios"
 import Navigation from "../../components/Navigation"
 import { useParams } from "react-router-dom"
 import "./StockDetails.scss"
@@ -6,10 +7,20 @@ import "./StockDetails.scss"
 function StockDetails() {
     let { stock } = useParams()
 
-    const links = [
-        `https://finnhub.io/api/v1/stock/profile2?symbol=${stock}&token=c4us1e2ad3id268aq4cg`,
-        `https://finnhub.io/api/v1/quote?symbol=${stock}&token=c4us1e2ad3id268aq4cg`,
-    ]
+    useEffect(() => {
+        axios({
+            method: "get",
+            url: `https://${
+                import.meta.env.API_ENDPOINT
+            }/api/stock?symbol=${stock}`,
+        })
+            .then((res) => {
+                console.log(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
 
     return (
         <>
