@@ -1,7 +1,4 @@
-import React, { useContext } from "react"
-import { useEffect } from "react"
-import { Navigate } from "react-router-dom"
-import Loading from "../../components/Loading"
+import React, { useEffect } from "react"
 import Navbar from "../../components/Navbar"
 import AddBtn from "../../components/AddBtn"
 import Home from "../../components/Home"

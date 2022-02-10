@@ -18,18 +18,9 @@ function App() {
         const auth = getAuth()
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                const uid = user.uid
-                console.log("User found : " + uid)
+                console.log("User found : " + user.uid)
                 setUserLoggedIn(true)
                 setUserProfile([user.providerData[0]])
-                const doc = {
-                    _id: user.providerData[0].uid,
-                    _type: "user",
-                    userName: user.providerData[0].displayName,
-                    email: user.providerData[0].email,
-                    userId: user.providerData[0].uid,
-                    image: user.providerData[0].photoURL,
-                }
             } else {
                 console.log("No user found")
                 setUserLoggedIn(false)

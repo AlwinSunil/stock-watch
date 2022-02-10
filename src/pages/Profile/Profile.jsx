@@ -13,13 +13,10 @@ function Profile() {
             <Navigation header="Profile" />
             <div className="profile">
                 {userProfile.map((user) => (
-                    <div
-                        className="profile__card"
-                        key={Math.random().toString(36).substring(2, 7)}
-                    >
+                    <div className="profile__card">
                         <div className="profile__card-img">
                             <img
-                                src={`https://avatars.dicebear.com/api/initials/alwinsunil.svg`}
+                                src={`https://avatars.dicebear.com/api/initials/${user.displayName}.svg`}
                                 alt=""
                             />
                         </div>

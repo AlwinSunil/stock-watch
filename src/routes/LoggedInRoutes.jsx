@@ -10,13 +10,13 @@ import StockDetails from "./../pages/StockDetails"
 function LoggedInRoutes() {
     return (
         <Routes>
-            <Route path="*" element={<Navigate to="/" />} />
-            <Route path="/symbol=:stock" element={<StockDetails />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/addstock" element={<Search />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/stock=:stock" element={<StockDetails />} />
             <Route path="/updateprofile" element={<ProfileUpdate />} />
+            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     )
 }

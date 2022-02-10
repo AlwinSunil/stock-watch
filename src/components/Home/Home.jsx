@@ -7,14 +7,7 @@ function Home() {
 
     const stocks = ["TSLA", "GOOGL", "MSFT", "AAPL", "MDB", "DIS"]
 
-    useEffect(() => {
-        axios({
-            method: "get",
-            url: `https://stock-watch-vitejs.vercel.app/api/stock?symbol=AAPL`,
-        }).then((res) => {
-            console.log(res.data)
-        })
-    }, [])
+    useEffect(() => {}, [])
 
     return (
         <div className="home">
