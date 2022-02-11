@@ -3,5 +3,18 @@
     "singleQuote": false,
     "semi": false,
     "bracketSameLine": false,
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "importOrder": [
+        "^react",
+        "^firebase/(.*)$",
+        "^axios",
+        "^./context/(.*)$",
+        "^./components/(.*)$",
+        "^./routes/(.*)$",
+        "^./firebase",
+        "^[../]",
+        "^[./]"
+    ],
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true
 }

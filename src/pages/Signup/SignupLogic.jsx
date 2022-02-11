@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithPopup,
     GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    getAuth,
+    signInWithPopup,
 } from "firebase/auth"
 
 const SignupLogic = () => {

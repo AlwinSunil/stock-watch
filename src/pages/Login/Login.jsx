@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import LoginLogic from "./LoginLogic"
 import "./Login.scss"
+import LoginLogic from "./LoginLogic"
 
 function Login() {
     const {

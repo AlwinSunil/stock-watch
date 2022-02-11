@@ -1,7 +1,7 @@
 import React from "react"
-import { Navigate, Link } from "react-router-dom"
-import SignupLogic from "./SignupLogic"
+import { Link, Navigate } from "react-router-dom"
 import "./Signup.scss"
+import SignupLogic from "./SignupLogic"
 
 function Signup() {
     const {

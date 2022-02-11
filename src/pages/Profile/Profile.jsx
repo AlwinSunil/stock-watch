@@ -1,9 +1,9 @@
 import React from "react"
-import Navigation from "../../components/Navigation"
-import ProfileLogic from "./ProfileLogic"
-import UpdatePassword from "../../components/UpdatePassword"
 import { Link } from "react-router-dom"
+import Navigation from "../../components/Navigation"
+import UpdatePassword from "../../components/UpdatePassword"
 import "./Profile.scss"
+import ProfileLogic from "./ProfileLogic.jsx"
 
 function Profile() {
     const { userProfile, loginProviderGoogle, signOutUser } = ProfileLogic()
@@ -13,7 +13,7 @@ function Profile() {
             <Navigation header="Profile" />
             <div className="profile">
                 {userProfile.map((user) => (
-                    <div className="profile__card">
+                    <div className="profile__card" key="profile__card">
                         <div className="profile__card-img">
                             <img
                                 src={`https://avatars.dicebear.com/api/initials/${user.displayName}.svg`}

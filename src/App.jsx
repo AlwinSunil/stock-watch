@@ -1,11 +1,10 @@
-import React from "react"
-import { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
-import { UserProfileContext } from "./context/UserProfileContext"
 import { UserLoggedInContext } from "./context/UserLoggedInContext"
-import LoggedInRoutes from "./routes/LoggedInRoutes"
-import GuestRoutes from "./routes/GuestRoutes"
+import { UserProfileContext } from "./context/UserProfileContext"
 import Loading from "./components/Loading"
+import GuestRoutes from "./routes/GuestRoutes"
+import LoggedInRoutes from "./routes/LoggedInRoutes"
 import "./firebase.jsx"
 import "./App.scss"
 
@@ -19,6 +18,7 @@ function App() {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log("User found : " + user.uid)
+                console.log(user)
                 setUserLoggedIn(true)
                 setUserProfile([user.providerData[0]])
             } else {

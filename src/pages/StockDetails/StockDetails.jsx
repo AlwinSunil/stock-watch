@@ -1,18 +1,17 @@
 import React, { useEffect } from "react"
+import { useParams } from "react-router-dom"
 import axios from "axios"
 import Navigation from "../../components/Navigation"
-import { useParams } from "react-router-dom"
 import "./StockDetails.scss"
 
 function StockDetails() {
     let { stock } = useParams()
 
     useEffect(() => {
+        console.log(`${import.meta.env.VITE_VERCEL_URL}/api/stock?symbol=${stock}`)
         axios({
             method: "get",
-            url: `https://${
-                import.meta.env.API_ENDPOINT
-            }/api/stock?symbol=${stock}`,
+            url: `${import.meta.env.VITE_VERCEL_URL}/api/stock?symbol=${stock}`,
         })
             .then((res) => {
                 console.log(res.data)
