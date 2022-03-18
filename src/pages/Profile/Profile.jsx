@@ -18,6 +18,7 @@ function Profile() {
                             <img
                                 src={`https://avatars.dicebear.com/api/initials/${user.displayName}.svg`}
                                 alt=""
+                                loading="lazy"
                             />
                         </div>
                         <h3>{user.displayName}</h3>
@@ -37,9 +38,9 @@ function Profile() {
                     </div>
                 </div>
                 <div className="profile__settings">
-                    <div className="usersettings-btn">
+                    <Link className="usersettings-btn" to="/opensource">
                         <p>Open-source License</p>
-                    </div>
+                    </Link>
                     <Link className="usersettings-btn" to="/about">
                         <p>About</p>
                     </Link>

@@ -1,8 +1,8 @@
 .profileupdate {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
     height: calc(100vh - 4rem);
+    margin: 1rem;
     overflow-y: auto;
 
     &__form {
@@ -12,8 +12,8 @@
 
 @media (min-width: 640px) {
     .profileupdate {
+        width: 55%;
         margin-right: auto;
         margin-left: auto;
-        width: 55%;
     }
 }

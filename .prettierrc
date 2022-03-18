@@ -5,12 +5,13 @@
     "bracketSameLine": false,
     "arrowParens": "always",
     "importOrder": [
-        "^react",
+        "react",
         "^firebase/(.*)$",
-        "^axios",
         "^./context/(.*)$",
         "^./components/(.*)$",
+        "^./pages/(.*)$",
         "^./routes/(.*)$",
+        "^@mui/(.*)$",
         "^./firebase",
         "^[../]",
         "^[./]"

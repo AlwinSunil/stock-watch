@@ -1,32 +1,32 @@
 .addstock {
     &-btn {
-        background: var(--primary);
-        border-radius: 0.65rem;
+        display: flex;
+        position: absolute;
+        z-index: 100;
+        right: 4.75%;
         bottom: 3%;
+        width: 9rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 0.65rem;
+        background: var(--primary);
         box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
             rgb(0 0 0 / 30%) 0px 1px 3px -1px;
-        display: flex;
-        padding: 0.3rem 0.7rem;
-        position: absolute;
-        right: 4.75%;
-        width: 9rem;
-        z-index: 100;
 
         & img {
-            padding: 0.2rem;
-            margin: auto 0px auto auto;
             width: 2rem;
+            margin: auto 0px auto auto;
+            padding: 0.2rem;
         }
 
         & p {
+            margin-right: auto;
+            padding-left: 0.25rem;
+            border: 0px;
             background: var(--primary);
             color: var(--white);
             font-size: 0.95rem;
             font-weight: 500;
             text-align: center;
-            margin-right: auto;
-            padding-left: 0.25rem;
-            border: 0px;
         }
 
         &:hover {
@@ -35,8 +35,8 @@
         }
 
         &:active {
-            opacity: 0.9;
             transform: scale(1) !important;
+            opacity: 0.9;
         }
     }
 }

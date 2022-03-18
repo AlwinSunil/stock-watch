@@ -1,3 +1,4 @@
-export default function handler(response) {
-    response.status(200).send("Welcome to the Stock Watch API")
+export default function handler(request, response) {
+    const { id } = request.query
+    response.status(200).send(`Welcome ${id} to the Stock Watch API!`)
 }

@@ -26,7 +26,6 @@ function App() {
                 setUserLoggedIn(false)
             }
         })
-
         setLoader(false)
     }, [])
 

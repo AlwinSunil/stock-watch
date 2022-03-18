@@ -7,7 +7,7 @@ function ProfileLogic() {
     const [userProfile] = useContext(UserProfileContext)
     const [loginProviderGoogle, setLoginProviderGoogle] = useState()
 
-    /* ================= Useeffect ================= */
+    /* ================= useEffect ================= */
     useEffect(() => {
         console.log(userProfile[0])
         if (userProfile[0].providerId === "google.com") {

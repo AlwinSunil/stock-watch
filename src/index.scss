@@ -22,25 +22,25 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: "Inter", sans-serif !important;
     width: 100vw;
+    margin: 0;
     overflow-x: hidden;
+    font-family: "Inter", sans-serif !important;
 }
 
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
     position: relative;
-    transition: all 0.25s ease-in-out, border-radius 0s linear;
-    opacity: 1;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    transition: all 0.25s ease-in-out, border-radius 0s linear;
+    opacity: 1;
     font-family: "Inter", sans-serif !important;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    text-decoration: none;
     -webkit-tap-highlight-color: #6bb8ff41;
 }
 
@@ -65,9 +65,9 @@ h1 {
 }
 
 h2 {
+    padding: 0.5rem 0rem;
     font-size: 2rem;
     font-weight: 500;
-    padding: 0.5rem 0rem;
 }
 
 h3 {

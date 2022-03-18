@@ -1,23 +1,24 @@
 .auth {
     display: flex;
     flex-direction: column;
-    background: var(--neutral);
     width: 100vw;
+    min-height: 100vh;
+    background: var(--neutral);
 
     &__card {
         display: flex;
         flex-direction: column;
+        width: 70%;
         margin: auto;
         padding: 1.75rem 1.5rem;
-        width: 70%;
-        background: var(--white);
         border-radius: 0.2rem;
+        background: var(--white);
     }
 
     &__logo {
         display: flex;
-        margin: auto auto 0.5rem auto;
         width: 7rem;
+        margin: auto auto 0.5rem auto;
 
         & img {
             width: 100%;
@@ -30,27 +31,27 @@
         border-bottom: 1px solid var(--neutral-hover-v2);
 
         & h3 {
-            font-weight: 500;
             padding-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         & button {
-            border: 1px solid var(--neutral-hover-v2);
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid var(--neutral-hover-v2);
+            border-radius: 0.2rem;
             background: var(--white);
             color: #3b3b3b;
-            border-radius: 0.2rem;
-            font-weight: 500;
-            margin-top: 0.5rem;
             font-size: 0.95rem;
-            padding: 0.5rem;
-            width: 100%;
+            font-weight: 500;
 
             & img {
-                margin-right: 0.75rem;
                 height: 1.4rem;
+                margin-right: 0.75rem;
             }
 
             &:active {
@@ -80,11 +81,11 @@
         }
 
         & input {
-            border: 1px solid var(--neutral-hover-v2);
             padding: 0.5rem 0.75rem;
+            border: 1px solid var(--neutral-hover-v2);
             border-radius: 0.2rem;
-            font-size: 0.95rem;
             color: var(--text);
+            font-size: 0.95rem;
 
             &:focus {
                 box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
@@ -92,11 +93,11 @@
         }
 
         &-submit {
-            background: #0084ff;
-            font-weight: 500;
-            color: var(--white) !important;
             margin: 1rem 0px;
             border: 0px !important;
+            background: #0084ff;
+            color: var(--white) !important;
+            font-weight: 500;
 
             &:disabled {
                 background: rgba(0, 0, 0, 0.3);
@@ -120,8 +121,8 @@
     &__login {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         border-top: 1px solid var(--neutral-hover-v2);
 
         & p {
@@ -130,9 +131,9 @@
         }
 
         & a {
+            color: #0084ff;
             font-size: 0.95rem;
             text-decoration: underline;
-            color: #0084ff;
         }
     }
 }
@@ -142,11 +143,11 @@
         &__card {
             display: flex;
             flex-direction: column;
+            max-width: 23rem;
             margin: 3rem auto !important;
             padding: 1.75rem 1.5rem;
-            max-width: 23rem;
-            background: var(--white);
             border-radius: 0.2rem;
+            background: var(--white);
         }
     }
 }
@@ -156,11 +157,11 @@
         &__card {
             display: flex;
             flex-direction: column;
+            width: 85%;
             margin: 3rem auto !important;
             padding: 1.75rem 1.5rem;
-            width: 85%;
-            background: var(--white);
             border-radius: 0.2rem;
+            background: var(--white);
         }
     }
 }
@@ -174,25 +175,25 @@ input[type="radio"] {
     --border: var(--neutral-hover-v2);
     --border-hover: #0084ff;
     --background: #fff;
-    -webkit-appearance: none;
     display: inline-block;
-    vertical-align: top;
     position: relative;
-    outline: none;
     height: 21px;
-    padding: 0px;
     margin: 0.75rem 0px 0.5rem 0.25rem;
-    cursor: pointer;
-    border: 1px solid var(--bc, var(--border));
-    background: var(--b, var(--background));
+    padding: 0px;
     transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    border: 1px solid var(--bc, var(--border));
+    outline: none;
+    background: var(--b, var(--background));
+    vertical-align: top;
+    cursor: pointer;
+    -webkit-appearance: none;
 
     &:after {
         content: "";
         display: block;
-        left: 0;
-        top: 0;
         position: absolute;
+        top: 0;
+        left: 0;
         transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
             opacity var(--d-o, 0.2s);
     }
@@ -207,8 +208,8 @@ input[type="radio"] {
 
     &:disabled {
         --b: var(--disabled);
-        cursor: not-allowed;
         opacity: 0.9;
+        cursor: not-allowed;
 
         &:checked {
             --b: var(--disabled-inner);
@@ -245,12 +246,12 @@ input[type="radio"] {
     }
 
     & + label {
+        display: inline-block;
+        margin-left: 0.75rem;
         font-size: 14px;
         line-height: 21px;
-        display: inline-block;
         vertical-align: top;
         cursor: pointer;
-        margin-left: 0.75rem;
     }
 }
 
@@ -259,14 +260,14 @@ input[type="checkbox"] {
         border-radius: 0.2rem;
 
         &:after {
+            top: 4px;
+            left: 7px;
             width: 5px;
             height: 9px;
+            transform: rotate(var(--r, 20deg));
             border: 2px solid var(--white);
             border-top: 0;
             border-left: 0;
-            left: 7px;
-            top: 4px;
-            transform: rotate(var(--r, 20deg));
         }
 
         &:checked {
@@ -279,13 +280,13 @@ input[type="checkbox"] {
         border-radius: 11px;
 
         &:after {
-            left: 2px;
             top: 2px;
-            border-radius: 50%;
+            left: 2px;
             width: 15px;
             height: 15px;
-            background: var(--ab, var(--border));
             transform: translateX(var(--x, 0));
+            border-radius: 50%;
+            background: var(--ab, var(--border));
         }
 
         &:checked {
@@ -309,10 +310,10 @@ input[type="radio"] {
     &:after {
         width: 19px;
         height: 19px;
-        border-radius: 50%;
-        background: var(--white);
-        opacity: 0;
         transform: scale(var(--s, 0.7));
+        border-radius: 50%;
+        opacity: 0;
+        background: var(--white);
     }
 
     &:checked {

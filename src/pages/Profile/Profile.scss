@@ -5,24 +5,24 @@
     &__card {
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
+        margin: 1rem;
+        padding: 2.5rem 1rem;
         border: 1px solid var(--neutral-bg);
         background: var(--secondary-v2);
-        align-items: center;
-        padding: 2.5rem 1rem;
-        margin: 1rem;
 
         &-img {
             display: flex;
-            height: 7rem;
             width: 7rem;
-            border-radius: 50%;
+            height: 7rem;
             overflow: hidden;
+            border-radius: 50%;
             background: var(--secondary);
 
             & img {
-                height: 100%;
                 width: 100%;
+                height: 100%;
             }
         }
 
@@ -31,8 +31,8 @@
         }
 
         & p {
-            opacity: 0.8;
             padding: 0.25rem 0px;
+            opacity: 0.8;
         }
     }
 
@@ -42,10 +42,10 @@
 }
 
 .usersettings-btn {
+    display: block;
+    margin-bottom: -1px;
     padding: 0.5rem 1rem;
     border: 1px solid var(--neutral-hover);
-    margin-bottom: -1px;
-    display: block;
 
     &-disable {
         &:hover {
@@ -54,8 +54,8 @@
         }
 
         &:active {
-            opacity: 1 !important;
             transform: scale(1) !important;
+            opacity: 1 !important;
         }
     }
 
@@ -65,8 +65,8 @@
     }
 
     &:active {
-        opacity: 0.8;
         transform: scale(0.99);
+        opacity: 0.8;
     }
 }
 
@@ -82,8 +82,8 @@
 
     &-v {
         padding: 0px 0px 0.2rem 0px;
-        font-size: 0.8rem;
         opacity: 0.8;
+        font-size: 0.8rem;
     }
 }
 

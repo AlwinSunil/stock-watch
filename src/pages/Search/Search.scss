@@ -3,22 +3,22 @@
     flex-direction: column;
 
     &__results {
-        background-color: var(--neutral-bg-light);
-        padding: 1rem;
         height: calc(100vh - 5rem);
+        padding: 1rem;
         overflow-y: scroll;
+        background-color: var(--neutral-bg-light);
     }
 
     & p {
-        padding: 0.25rem 0px;
+        padding: 0px;
     }
 
     &__result {
         display: flex;
         margin-bottom: -1px;
+        padding: 1rem;
         border: 1px solid var(--neutral-hover);
         background-color: var(--white);
-        padding: 1rem;
 
         &:hover {
             background: var(--neutral-bg);
@@ -33,59 +33,59 @@
 
     & img {
         display: flex;
-        margin: auto;
-        border-radius: 50%;
-        padding: 0.5rem;
         width: 2.75rem;
         height: 2.75rem;
+        margin: auto;
+        padding: 0.5rem;
+        border-radius: 50%;
     }
 }
 
 .searchbar {
     display: flex;
     flex-direction: row-reverse;
-    border: 0px;
-    border-radius: 0.1rem;
     width: -webkit-fill-available;
     width: 100%;
     overflow: hidden;
+    border: 0px;
+    border-radius: 0.1rem;
     color: var(--text);
     font-size: 1rem;
 
     &__btn {
+        padding: 0.5rem;
         border: 1px solid var(--neutral-hover);
         border-left: 0px;
         border-radius: 0.1rem;
         background: var(--neutral-bg);
-        padding: 0.5rem;
     }
 
     &__header {
         display: flex;
         position: sticky;
         z-index: 99;
-        border: 1px solid var(--neutral-hover);
         height: 5rem;
+        border: 1px solid var(--neutral-hover);
     }
 
     &__holder {
         display: flex;
-        margin: auto 1rem;
         width: 100vw;
+        margin: auto 1rem;
         overflow: hidden;
     }
 
     & img {
-        margin: 0px 0.2rem;
         width: 1.5rem;
         height: 1.5rem;
+        margin: 0px 0.2rem;
     }
 
     & input {
+        width: 100%;
+        padding-left: 1rem;
         border: 1px solid var(--neutral-hover);
         background: var(--neutral-bg-light);
-        padding-left: 1rem;
-        width: 100%;
         color: var(--text);
         font-size: 0.95rem;
 
