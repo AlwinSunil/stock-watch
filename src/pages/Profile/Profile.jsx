@@ -12,19 +12,24 @@ function Profile() {
         <>
             <Navigation header="Profile" />
             <div className="profile">
-                {userProfile.map((user) => (
-                    <div className="profile__card" key="profile__card">
-                        <div className="profile__card-img">
-                            <img
-                                src={`https://avatars.dicebear.com/api/initials/${user.displayName}.svg`}
-                                alt=""
-                                loading="lazy"
-                            />
-                        </div>
-                        <h3>{user.displayName}</h3>
-                        <p>{user.email}</p>
-                    </div>
-                ))}
+                {userProfile ? (
+                    <>
+                        {userProfile.map((user) => (
+                            <div className="profile__card" key="profile__card">
+                                <div className="profile__card-img">
+                                    <img
+                                        src={`https://avatars.dicebear.com/api/initials/${user.displayName}.svg`}
+                                        alt=""
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <h3>{user.displayName}</h3>
+                                <p>{user.email}</p>
+                            </div>
+                        ))}
+                    </>
+                ) : null}
+
                 <div className="profile__settings">
                     {loginProviderGoogle ? null : <UpdatePassword />}
                     <Link className="usersettings-btn" to="/updateprofile">

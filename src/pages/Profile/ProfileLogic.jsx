@@ -9,12 +9,14 @@ function ProfileLogic() {
 
     /* ================= useEffect ================= */
     useEffect(() => {
-        console.log(userProfile[0])
-        if (userProfile[0].providerId === "google.com") {
-            setLoginProviderGoogle(true)
-            console.log("Provider : Google.com")
-        } else {
-            setLoginProviderGoogle(false)
+        if (userProfile) {
+            console.log(userProfile[0])
+            if (userProfile[0].providerId === "google.com") {
+                setLoginProviderGoogle(true)
+                console.log("Provider : Google.com")
+            } else {
+                setLoginProviderGoogle(false)
+            }
         }
     }, [userProfile])
 
