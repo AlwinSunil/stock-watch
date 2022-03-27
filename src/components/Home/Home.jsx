@@ -18,7 +18,9 @@ function Home() {
             console.log("Symbol :", symbols[i])
             axios({
                 method: "get",
-                url: `http://localhost:3000/api/stockpreview?symbol=${symbols[i]}`,
+                url: `${
+                    import.meta.env.VITE_VERCEL_URL
+                }/api/stockpreview?symbol=${symbols[i]}`,
             })
                 .then((res) => {
                     const data = res.data.result[0]
