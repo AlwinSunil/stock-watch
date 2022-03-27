@@ -11,8 +11,9 @@
         width: 70%;
         margin: auto;
         padding: 1.75rem 1.5rem;
-        border-radius: 0.2rem;
         background: var(--white);
+        box-shadow: rgba(0, 0, 0, 0.025) 0px 6px 24px 0px,
+            rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
 
     &__logo {
@@ -146,7 +147,6 @@
             max-width: 23rem;
             margin: 3rem auto !important;
             padding: 1.75rem 1.5rem;
-            border-radius: 0.2rem;
             background: var(--white);
         }
     }
@@ -160,7 +160,6 @@
             width: 85%;
             margin: 3rem auto !important;
             padding: 1.75rem 1.5rem;
-            border-radius: 0.2rem;
             background: var(--white);
         }
     }

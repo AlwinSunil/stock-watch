@@ -18,15 +18,15 @@
     border: 1px solid var(--neutral-hover);
     background-color: var(--white);
 
-    & p {
-        padding: 0.25rem;
-    }
-
     &__details {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         width: 60%;
-        gap: 0.25rem;
+
+        & p {
+            padding: 0px;
+        }
     }
 
     &__symbol {
@@ -42,12 +42,19 @@
             text-align: end;
         }
 
+        &-inst {
+            padding: 0.1rem 0px;
+        }
+
         &-grow {
             width: min-content;
             margin-left: auto;
             border-radius: 0.2rem;
             background-color: var(--text);
             color: var(--white);
+            font-size: 0.85rem !important;
+            padding: 0.2rem 0.5rem;
+            margin-top: 0.25rem;
         }
     }
 }
