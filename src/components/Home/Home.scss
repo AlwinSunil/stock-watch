@@ -4,18 +4,26 @@
 
 .stocks {
     width: 100vw;
-    height: 100%;
-    padding: 1rem;
+    height: calc(100vh - 6.75rem);
+    padding: 0px 1rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    background-color: var(--neutral-bg-light);
+}
+
+.querycall {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    text-align: end;
+
+    & strong {
+        font-weight: 500;
+    }
 }
 
 .stock {
     display: flex;
-    margin-bottom: -1px;
     padding: 1rem 1.25rem;
-    border: 1px solid var(--neutral-hover);
+    border-bottom: 1px solid var(--neutral-hover);
     background-color: var(--white);
 
     &__details {
@@ -48,13 +56,19 @@
 
         &-grow {
             width: min-content;
+            margin-top: 0.25rem;
             margin-left: auto;
+            padding: 0.2rem 0.5rem;
             border-radius: 0.2rem;
             background-color: var(--text);
             color: var(--white);
             font-size: 0.85rem !important;
-            padding: 0.2rem 0.5rem;
-            margin-top: 0.25rem;
         }
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .querycall {
+        padding: 0.5rem 2rem 0.5rem 1rem;
     }
 }

@@ -105,9 +105,14 @@ function Search() {
             <div className="search__results">
                 {stocks.map((stock) => (
                     <div
-                        className="search__result"
+                        className="search__result hover"
                         key={Math.random().toString(36).substring(2, 7)}
                     >
+                        <img
+                            className="search__result-img"
+                            src="/assets/icons/search.svg"
+                            alt=""
+                        />
                         <div className="stock__details">
                             <p className="stock__symbol">{stock.symbol}</p>
                             <p className="stock__name">{stock.name}</p>

@@ -92,3 +92,15 @@ a {
 button {
     cursor: pointer;
 }
+
+.hover {
+    &:hover {
+        background-color: var(--neutral-bg);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.999);
+        background-color: #f1f1f1;
+    }
+}
