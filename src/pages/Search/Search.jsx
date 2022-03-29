@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./Search.scss"
 
 function Search() {
@@ -104,9 +104,10 @@ function Search() {
             </div>
             <div className="search__results">
                 {stocks.map((stock) => (
-                    <div
+                    <Link
                         className="search__result menu"
                         key={Math.random().toString(36).substring(2, 7)}
+                        to={`/stock=${stock.symbol}`}
                     >
                         <img
                             className="search__result-img"
@@ -122,7 +123,7 @@ function Search() {
                                 {stock.priceinst}
                             </p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
