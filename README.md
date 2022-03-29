@@ -14,12 +14,13 @@ I am someone who is really into the stock market and economics, I am not an expe
 | **Production Build**   | `npm run build`  | vite build                                          |
 | **Production Preview** | `npm run serve`  | vite preview                                        |
 | **Lint**               | `npm run pretty` | prettier --write \"./\*_/_.{js,jsx,json,sass,css}\| |
-| **Deploy**             | `vercel`         | first **`npm i -g vercel`** to use this command     |
+| **Format**             | `npm run format` |                                                     |
+| **Deploy**             | `vercel --prod`  | first **`npm i -g vercel`** to use this command     |
 
 ## Deploy
 
 Deployed Single Page App and API in **vercel**.<br/>
-[Link to the project, (Temporary)](https://stock-watch-vitejs.vercel.app/)
+[Link to the project, (Temporary)](https://stock-watch-app.vercel.app/)
 
 ## Configuration
 
