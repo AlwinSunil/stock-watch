@@ -11,9 +11,21 @@
 }
 
 .querycall {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    padding: 0.6rem 1rem;
+    font-size: 0.7rem;
     text-align: end;
+
+    & img {
+        width: 1.25rem;
+        margin-right: 0.25rem;
+    }
+
+    & p {
+        padding: 0px;
+    }
 
     & strong {
         font-weight: 500;
@@ -69,6 +81,6 @@
 
 @media screen and (min-width: 640px) {
     .querycall {
-        padding: 0.5rem 2rem 0.5rem 1rem;
+        padding: 0.6rem 2rem 0.6rem 1rem;
     }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import axios from "axios"
 import { getUserSymbols } from "../../firebase"
 import "./Home.scss"
@@ -36,13 +37,21 @@ function Home() {
 
     return (
         <div className="home">
-            <p className="querycall">
-                Time at data last updated:&nbsp;
-                <strong>{queryCallTime && `${queryCallTime}`}</strong>
-            </p>
+            <div className="querycall">
+                <img src="/assets/icons/info.svg" alt="" />
+                <p>
+                    Time at data last updated:&nbsp;
+                    <strong>{queryCallTime && `${queryCallTime}`}</strong>
+                </p>
+            </div>
+
             <div className="stocks">
                 {stockResult.map((stock) => (
-                    <div className="stock hover" key={stock.symbol}>
+                    <Link
+                        className="stock menu"
+                        key={stock.symbol}
+                        to={`/stock=${stock.symbol}`}
+                    >
                         <div className="stock__details">
                             <p className="stock__symbol">{stock.symbol}</p>
                             <p className="stock__name">{stock.name}</p>
@@ -58,7 +67,7 @@ function Home() {
                                 &nbsp;%
                             </p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

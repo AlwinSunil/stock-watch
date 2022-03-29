@@ -58,16 +58,6 @@
             opacity: 1 !important;
         }
     }
-
-    &:hover {
-        background: var(--neutral-bg);
-        cursor: pointer;
-    }
-
-    &:active {
-        transform: scale(0.99);
-        opacity: 0.8;
-    }
 }
 
 .usersettings-logout p {

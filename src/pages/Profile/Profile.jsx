@@ -32,21 +32,21 @@ function Profile() {
 
                 <div className="profile__settings">
                     {loginProviderGoogle ? null : <UpdatePassword />}
-                    <Link className="usersettings-btn" to="/updateprofile">
+                    <Link className="usersettings-btn menu" to="/updateprofile">
                         <p>Update Profile</p>
                     </Link>
                     <div
-                        className="usersettings-btn usersettings-logout"
+                        className="usersettings-btn usersettings-logout menu"
                         onClick={signOutUser}
                     >
                         <p>Log Out</p>
                     </div>
                 </div>
                 <div className="profile__settings">
-                    <Link className="usersettings-btn" to="/opensource">
+                    <Link className="usersettings-btn menu" to="/opensource">
                         <p>Open-source License</p>
                     </Link>
-                    <Link className="usersettings-btn" to="/about">
+                    <Link className="usersettings-btn menu" to="/about">
                         <p>About</p>
                     </Link>
                     <div className="usersettings-btn version usersettings-btn-disable">

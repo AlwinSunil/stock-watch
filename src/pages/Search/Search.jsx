@@ -105,7 +105,7 @@ function Search() {
             <div className="search__results">
                 {stocks.map((stock) => (
                     <div
-                        className="search__result hover"
+                        className="search__result menu"
                         key={Math.random().toString(36).substring(2, 7)}
                     >
                         <img

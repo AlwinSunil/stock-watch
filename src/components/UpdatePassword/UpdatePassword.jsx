@@ -7,7 +7,7 @@ function UpdatePassword() {
     return (
         <div className="usersettings-holder">
             <div
-                className="usersettings-btn"
+                className="usersettings-btn menu"
                 onClick={() => setIsActive(!isActive)}
             >
                 <p>Update Password</p>
