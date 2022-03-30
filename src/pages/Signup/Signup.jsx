@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, Navigate } from "react-router-dom"
-import "./Signup.scss"
 import SignupLogic from "./SignupLogic"
 
 function Signup() {

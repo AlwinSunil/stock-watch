@@ -1,7 +1,6 @@
 .auth {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100vw;
     min-height: 100vh;
     background: var(--neutral);
@@ -14,22 +13,25 @@
         padding: 1.75rem 1.5rem;
         border-radius: 0.4rem;
         background: var(--white);
+        box-shadow: rgba(0, 0, 0, 0.025) 0px 6px 24px 0px,
+            rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
-
     &__logo {
         display: flex;
         width: 7rem;
+        height: 2.75rem;
         margin: auto auto 0.5rem auto;
 
         & img {
-            width: 100%;
+            width: 7rem;
+            height: 2.75rem;
             margin-right: 1rem;
         }
     }
 
     &__header {
         padding: 0px 0px 1.5rem 0px;
-        border-bottom: 1px solid --neutral-hover;
+        border-bottom: 1px solid var(--neutral-hover-v2);
 
         & h3 {
             padding-bottom: 0.5rem;
@@ -47,11 +49,12 @@
             border: 1px solid var(--neutral-hover-v2);
             border-radius: 0.2rem;
             background: var(--white);
-            color: #3d3d3d;
+            color: #3b3b3b;
             font-size: 0.95rem;
             font-weight: 500;
 
             & img {
+                width: 1.4rem;
                 height: 1.4rem;
                 margin-right: 0.75rem;
             }
@@ -65,7 +68,7 @@
     &__form {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem 0px;
+        padding: 0.5rem;
 
         &-terms {
             padding-top: 0.25rem;
@@ -146,7 +149,7 @@
             display: flex;
             flex-direction: column;
             max-width: 23rem;
-            margin: auto !important;
+            margin: 3rem auto !important;
             padding: 1.75rem 1.5rem;
             background: var(--white);
         }
@@ -159,7 +162,7 @@
             display: flex;
             flex-direction: column;
             width: 85%;
-            margin: 2rem auto;
+            margin: 3rem auto !important;
             padding: 1.75rem 1.5rem;
             background: var(--white);
         }

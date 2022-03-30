@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { QueryClient, QueryClientProvider, useQuery } from "react-query"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { UserLoggedInContext } from "./context/UserLoggedInContext"
 import { UserProfileContext } from "./context/UserProfileContext"
@@ -13,8 +12,6 @@ function App() {
     const [loader, setLoader] = useState(true)
     const [userLoggedIn, setUserLoggedIn] = useState()
     const [userProfile, setUserProfile] = useState()
-
-    const queryClient = new QueryClient()
 
     useEffect(() => {
         const auth = getAuth()
@@ -39,13 +36,11 @@ function App() {
     if (userLoggedIn === true) {
         return (
             <div className="app" id="app">
-                <QueryClientProvider client={queryClient}>
-                    <UserLoggedInContext.Provider value={[userLoggedIn]}>
-                        <UserProfileContext.Provider value={[userProfile]}>
-                            <LoggedInRoutes />
-                        </UserProfileContext.Provider>
-                    </UserLoggedInContext.Provider>
-                </QueryClientProvider>
+                <UserLoggedInContext.Provider value={[userLoggedIn]}>
+                    <UserProfileContext.Provider value={[userProfile]}>
+                        <LoggedInRoutes />
+                    </UserProfileContext.Provider>
+                </UserLoggedInContext.Provider>
             </div>
         )
     } else if (userLoggedIn === false) {
