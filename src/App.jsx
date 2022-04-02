@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { UserIdContext } from "./context/UserIdContext"
 import { UserLoggedInContext } from "./context/UserLoggedInContext"
 import { UserProfileContext } from "./context/UserProfileContext"
 import Loading from "./components/Loading"
@@ -12,6 +13,7 @@ function App() {
     const [loader, setLoader] = useState(true)
     const [userLoggedIn, setUserLoggedIn] = useState()
     const [userProfile, setUserProfile] = useState()
+    const [userId, setUserId] = useState()
 
     useEffect(() => {
         const auth = getAuth()
@@ -21,6 +23,7 @@ function App() {
                 console.log(user)
                 setUserLoggedIn(true)
                 setUserProfile([user.providerData[0]])
+                setUserId(user.uid)
             } else {
                 console.log("No user found")
                 setUserLoggedIn(false)
@@ -38,7 +41,9 @@ function App() {
             <div className="app" id="app">
                 <UserLoggedInContext.Provider value={[userLoggedIn]}>
                     <UserProfileContext.Provider value={[userProfile]}>
-                        <LoggedInRoutes />
+                        <UserIdContext.Provider value={[userId]}>
+                            <LoggedInRoutes />
+                        </UserIdContext.Provider>
                     </UserProfileContext.Provider>
                 </UserLoggedInContext.Provider>
             </div>

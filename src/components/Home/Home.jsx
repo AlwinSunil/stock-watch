@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
-import { getUserSymbols } from "../../firebase"
+import { UserWatchListContext } from "../../context/UserWatchListContext"
 import "./Home.scss"
 
 function Home() {
     const [stockResult, setStockResult] = useState([])
     const [queryCallTime, setQueryCallTime] = useState([])
 
+    const { list } = useContext(UserWatchListContext)
+    const [watchList] = list
+
     useEffect(() => {
-        getUserSymbols("V20rgQSMLkTPhkVLYUOMWhMstLz2").then((result) => {
-            getData(result)
-        })
+        if (watchList) {
+            getData(watchList)
+        }
     }, [])
 
     function getData(symbols) {
@@ -22,7 +25,6 @@ function Home() {
             })
                 .then((res) => {
                     const data = res.data.result[0]
-
                     setStockResult((stockResult) => [...stockResult, data])
                     console.log(res.data.result[0])
                 })

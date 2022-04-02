@@ -1,5 +1,7 @@
 .stockinfo {
+    height: calc(100vh - 64px);
     padding: 1.5rem 5vw;
+    overflow: auto;
 
     &__header {
         display: flex;
@@ -74,6 +76,53 @@
             padding: 0px;
             font-size: 1.1rem;
             font-weight: 600;
+        }
+    }
+
+    &__action {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        margin-top: 0.5rem;
+
+        & button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--neutral-hover-v2);
+            border-radius: 0.25rem;
+            background-color: #f6f8fa;
+            color: #3b3b3b;
+            font-size: 0.95rem;
+            font-weight: 500;
+
+            &:disabled {
+                opacity: 0.6;
+
+                &:hover {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        &-add {
+            background-color: var(--highlights) !important;
+            color: var(--white) !important;
+
+            &:active {
+                box-shadow: rgba(38, 106, 240, 0.15) 0px 0px 0px 3px;
+            }
+        }
+
+        &-remove {
+            border-color: var(--err) !important;
+            color: var(--err) !important;
+
+            &:active {
+                box-shadow: rgba(239, 68, 68, 0.15) 0px 0px 0px 3px;
+            }
         }
     }
 

@@ -1,14 +1,28 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
+import { UserWatchListContext } from "../../context/UserWatchListContext"
 import Navigation from "../../components/Navigation"
+import { addSymbolToWatchList, removeSymbolFromWatchList } from "../../firebase"
 import "./StockDetails.scss"
 
-function StockDetails() {
+function StockDetails(props) {
     const [stockDetails, setstockDetails] = useState([])
+    const [isWatching, setIsWatching] = useState()
+
+    const { list } = useContext(UserWatchListContext)
+    const [watchList] = list
+
     let { stock } = useParams()
 
     useEffect(() => {
+        if (watchList) {
+            if (watchList.includes(stock)) {
+                setIsWatching(true)
+            } else {
+                setIsWatching(false)
+            }
+        }
         axios({
             method: "get",
             url: `/api/stock?symbol=${stock}`,
@@ -20,7 +34,19 @@ function StockDetails() {
             .catch((err) => {
                 console.log(err)
             })
-    }, [])
+    }, [watchList])
+
+    const handleAddToWatchlist = () => {
+        if (isWatching === false) {
+            addSymbolToWatchList(stock, props.user, watchList.length)
+        }
+    }
+
+    const handleRemoveToWatchlist = () => {
+        if (isWatching === true) {
+            removeSymbolFromWatchList(stock, props.user)
+        }
+    }
 
     return (
         <>
@@ -91,6 +117,41 @@ function StockDetails() {
                     <div className="stockinfo__des">
                         <h4>Description</h4>
                         <p>{details.description}</p>
+                    </div>
+                    <div className="stockinfo__action">
+                        {isWatching ? (
+                            <>
+                                <button
+                                    className="stockinfo__action-add"
+                                    onClick={handleAddToWatchlist}
+                                    disabled
+                                >
+                                    Add to watchlist
+                                </button>
+                                <button
+                                    className="stockinfo__action-remove"
+                                    onClick={handleRemoveToWatchlist}
+                                >
+                                    Remove from watchlist
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <button
+                                    className="stockinfo__action-add"
+                                    onClick={handleAddToWatchlist}
+                                >
+                                    Add to watchlist
+                                </button>
+                                <button
+                                    className="stockinfo__action-remove"
+                                    onClick={handleRemoveToWatchlist}
+                                    disabled
+                                >
+                                    Remove from watchlist
+                                </button>
+                            </>
+                        )}
                     </div>
                 </div>
             ))}
