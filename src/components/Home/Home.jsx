@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { UserWatchListContext } from "../../context/UserWatchListContext"
@@ -15,7 +15,7 @@ function Home() {
         if (watchList) {
             getData(watchList)
         }
-    }, [])
+    }, [watchList])
 
     function getData(symbols) {
         for (let i = 0; i < symbols.length; i++) {

@@ -5,6 +5,7 @@
         "dev": "vite",
         "build": "vite build",
         "serve": "vite preview",
+        "vercel-dev": "vercel dev --local-config local.vercel.json",
         "pretty": "prettier --write \"./**/*.{js,jsx,json,scss,css,sass}\"",
         "stylelint": "npx stylelint \"**/*.scss\" --fix",
         "format": "start npm run pretty && start npm run stylelint"
@@ -12,7 +13,6 @@
     "dependencies": {
         "axios": "^0.24.0",
         "firebase": "^9.6.1",
-        "firebase-admin": "^10.0.2",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
         "react-query": "^3.34.17",
@@ -27,7 +27,7 @@
         "stylelint": "^14.6.0",
         "stylelint-config-property-sort-order-smacss": "^9.0.0",
         "stylelint-order": "^5.0.0",
-        "vercel": "^23.1.2",
+        "vercel": "^24.0.1",
         "vite": "^2.5.2"
     }
 }
