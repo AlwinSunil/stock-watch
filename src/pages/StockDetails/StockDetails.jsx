@@ -3,17 +3,40 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 import { UserWatchListContext } from "../../context/UserWatchListContext"
 import Navigation from "../../components/Navigation"
+import Alert from "@mui/material/Alert"
+import Fade from "@mui/material/Fade"
+import Stack from "@mui/material/Stack"
 import { addSymbolToWatchList, removeSymbolFromWatchList } from "../../firebase"
 import "./StockDetails.scss"
 
 function StockDetails(props) {
     const [stockDetails, setstockDetails] = useState([])
     const [isWatching, setIsWatching] = useState()
+    const [checked, setChecked] = useState(false)
+    const [removed, setRemoved] = useState(false)
 
     const { list } = useContext(UserWatchListContext)
     const [watchList] = list
 
     let { stock } = useParams()
+
+    const handleChange = () => {
+        setChecked((prev) => !prev)
+        if (checked === false) {
+            setTimeout(() => {
+                setChecked((prev) => !prev)
+            }, 1250)
+        }
+    }
+
+    const handleChangeRemove = () => {
+        setRemoved((prev) => !prev)
+        if (removed === false) {
+            setTimeout(() => {
+                setRemoved((prev) => !prev)
+            }, 1250)
+        }
+    }
 
     useEffect(() => {
         if (watchList) {
@@ -39,12 +62,14 @@ function StockDetails(props) {
     const handleAddToWatchlist = () => {
         if (isWatching === false) {
             addSymbolToWatchList(stock, props.user, watchList.length)
+            handleChange()
         }
     }
 
     const handleRemoveToWatchlist = () => {
         if (isWatching === true) {
             removeSymbolFromWatchList(stock, props.user)
+            handleChangeRemove()
         }
     }
 
@@ -126,13 +151,13 @@ function StockDetails(props) {
                                     onClick={handleAddToWatchlist}
                                     disabled
                                 >
-                                    Add to watchlist
+                                    Add to watch list
                                 </button>
                                 <button
                                     className="stockinfo__action-remove"
                                     onClick={handleRemoveToWatchlist}
                                 >
-                                    Remove from watchlist
+                                    Remove from watch list
                                 </button>
                             </>
                         ) : (
@@ -141,18 +166,68 @@ function StockDetails(props) {
                                     className="stockinfo__action-add"
                                     onClick={handleAddToWatchlist}
                                 >
-                                    Add to watchlist
+                                    Add to watch list
                                 </button>
                                 <button
                                     className="stockinfo__action-remove"
                                     onClick={handleRemoveToWatchlist}
                                     disabled
                                 >
-                                    Remove from watchlist
+                                    Remove from watch list
                                 </button>
                             </>
                         )}
                     </div>
+                    {checked ? (
+                        <Fade
+                            in={checked}
+                            sx={{
+                                width: "100%",
+                                top: "8px",
+                                padding: "0px 0.5rem",
+                                position: "fixed",
+                                right: "0",
+                                borderRadius: "32px",
+                                zIndex: "999",
+                            }}
+                        >
+                            <Stack
+                                sx={{
+                                    width: "100%",
+                                }}
+                                spacing={2}
+                            >
+                                <Alert severity="success" color="success">
+                                    {details.symbol} added to watch list
+                                </Alert>
+                            </Stack>
+                        </Fade>
+                    ) : null}
+                    {removed ? (
+                        <Fade
+                            in={removed}
+                            sx={{
+                                width: "100%",
+                                top: "8px",
+                                padding: "0px 0.5rem",
+                                position: "fixed",
+                                right: "0",
+                                borderRadius: "32px",
+                                zIndex: "999",
+                            }}
+                        >
+                            <Stack
+                                sx={{
+                                    width: "100%",
+                                }}
+                                spacing={2}
+                            >
+                                <Alert severity="error" color="error">
+                                    Failed to add {details.symbol} to watch list
+                                </Alert>
+                            </Stack>
+                        </Fade>
+                    ) : null}
                 </div>
             ))}
         </>

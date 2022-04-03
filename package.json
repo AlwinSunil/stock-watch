@@ -11,6 +11,9 @@
         "format": "start npm run pretty && start npm run stylelint"
     },
     "dependencies": {
+        "@emotion/react": "^11.8.2",
+        "@emotion/styled": "^11.8.1",
+        "@mui/material": "^5.5.3",
         "axios": "^0.24.0",
         "firebase": "^9.6.1",
         "react": "^17.0.0",
