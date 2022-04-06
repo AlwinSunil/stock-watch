@@ -8,16 +8,30 @@
     padding: 0px 1rem;
     overflow-x: hidden;
     overflow-y: scroll;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 5.25rem;
+    }
 }
 
 .querycall {
     display: flex;
     align-items: center;
     width: fit-content;
+    margin: 0.5rem;
     margin-left: auto;
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 0.9rem;
     font-size: 0.7rem;
     text-align: end;
+
+    &:hover {
+        background-color: var(--neutral-bg);
+        cursor: pointer;
+    }
 
     & img {
         width: 1.25rem;
@@ -26,13 +40,36 @@
 
     & p {
         margin: auto;
-        margin-top: 0.1rem;
         padding: 0px;
         font-size: 0.95rem;
     }
 
     & strong {
         font-weight: 500;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    padding: 3rem 2rem 4rem 2rem;
+    border-radius: 0.2rem;
+    background-color: var(--white);
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+        rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+    text-align: center;
+
+    & img {
+        width: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    & p {
+        padding: 0.35rem 0px;
     }
 }
 
@@ -85,6 +122,7 @@
 
 @media screen and (min-width: 640px) {
     .querycall {
-        padding: 0.6rem 2rem 0.6rem 1rem;
+        margin-right: 1rem;
+        padding: 0.5rem 0.9rem 0.5rem 0.9rem;
     }
 }

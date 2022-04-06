@@ -1,77 +1,55 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import axios from "axios"
+import React, { useContext, useState } from "react"
 import { UserWatchListContext } from "../../context/UserWatchListContext"
+import Modal from "@mui/material/Modal"
+import StockMenu from "../StockMenu/StockMenu"
 import "./Home.scss"
 
 function Home() {
-    const [stockResult, setStockResult] = useState([])
-    const [queryCallTime, setQueryCallTime] = useState([])
+    const [open, setOpen] = useState(false)
 
     const { list } = useContext(UserWatchListContext)
     const [watchList] = list
 
-    useEffect(() => {
-        if (watchList) {
-            getData(watchList)
-        }
-    }, [watchList])
-
-    function getData(symbols) {
-        for (let i = 0; i < symbols.length; i++) {
-            axios({
-                method: "get",
-                url: `/api/stockpreview?symbol=${symbols[i]}`,
-            })
-                .then((res) => {
-                    const data = res.data.result[0]
-                    setStockResult((stockResult) => [...stockResult, data])
-                    console.log(res.data.result[0])
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
-        var today = new Date()
-        console.log(today.toLocaleTimeString())
-        setQueryCallTime(today.toLocaleTimeString())
-    }
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
 
     return (
         <div className="home">
-            <div className="querycall">
+            <div className="querycall" onClick={handleOpen}>
                 <img src="/assets/icons/info.svg" alt="" />
-                <p>
-                    Time at data last updated:&nbsp;
-                    <strong>{queryCallTime && `${queryCallTime}`}</strong>
-                </p>
+                <p>Data may not be that accurate.</p>
             </div>
-
             <div className="stocks">
-                {stockResult.map((stock) => (
-                    <Link
-                        className="stock menu"
-                        key={stock.symbol}
-                        to={`/stock=${stock.symbol}`}
-                    >
-                        <div className="stock__details">
-                            <p className="stock__symbol">{stock.symbol}</p>
-                            <p className="stock__name">{stock.name}</p>
-                        </div>
-                        <div className="stock__price">
-                            <p className="stock__price-inst">
-                                {parseFloat(stock.price).toFixed(2)}
-                                &nbsp;
-                                {stock.currency}
-                            </p>
-                            <p className="stock__price-grow">
-                                {parseFloat(stock.changepercent).toFixed(2)}
-                                &nbsp;%
-                            </p>
-                        </div>
-                    </Link>
-                ))}
+                {watchList && (
+                    <>
+                        {watchList.map((stock) => (
+                            <StockMenu symbol={stock} key={stock} />
+                        ))}
+                    </>
+                )}
             </div>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                sx={{
+                    height: "100vh",
+                    display: "flex",
+                }}
+            >
+                <div className="modal">
+                    <img src="/assets/icons/info.svg" alt="" />
+                    <p>
+                        This is just an project for my personal portfolio. Data
+                        may not be that accurate. Data may have a latency of 2-3
+                        seconds.
+                    </p>
+                    <p>
+                        Data should not be used to make any financial decisions
+                    </p>
+                </div>
+            </Modal>
         </div>
     )
 }
