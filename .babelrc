@@ -1,1 +1,8 @@
-{ "presets": ["@babel/preset-react"], "plugins": ["transform-remove-console"] }
+{
+    "presets": ["@babel/preset-react"],
+    "env": {
+        "prod": {
+            "plugins": ["transform-remove-console"]
+        }
+    }
+}

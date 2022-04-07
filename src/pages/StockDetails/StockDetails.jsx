@@ -63,7 +63,7 @@ function StockDetails(props) {
         if (reachedWatchListLimit === false) {
             setTimeout(() => {
                 setReachedWatchListLimit((prev) => !prev)
-            }, 5000)
+            }, 2500)
         }
     }
 
@@ -102,15 +102,6 @@ function StockDetails(props) {
             <>
                 <Navigation header={`${stock}`} />
                 <Loading />
-            </>
-        )
-    }
-
-    if (isError) {
-        return (
-            <>
-                <Navigation header={`${stock}`} />
-                Error: {error.message}
             </>
         )
     }
@@ -245,7 +236,7 @@ function StockDetails(props) {
                                     sx={{
                                         width: "100%",
                                         top: "8px",
-                                        padding: "0px 0.5rem",
+                                        padding: "0px 0.75rem",
                                         position: "fixed",
                                         right: "0",
                                         borderRadius: "32px",
@@ -261,6 +252,9 @@ function StockDetails(props) {
                                         <Alert
                                             severity="success"
                                             color="success"
+                                            style={{
+                                                border: "1px solid #4caf50",
+                                            }}
                                         >
                                             {details.symbol} added to watch list
                                         </Alert>
@@ -273,7 +267,7 @@ function StockDetails(props) {
                                     sx={{
                                         width: "100%",
                                         top: "8px",
-                                        padding: "0px 0.5rem",
+                                        padding: "0px 0.75rem",
                                         position: "fixed",
                                         right: "0",
                                         borderRadius: "32px",
@@ -286,7 +280,13 @@ function StockDetails(props) {
                                         }}
                                         spacing={2}
                                     >
-                                        <Alert severity="error" color="error">
+                                        <Alert
+                                            severity="error"
+                                            color="error"
+                                            style={{
+                                                border: "1px solid #ef5350",
+                                            }}
+                                        >
                                             Removed {details.symbol} from watch
                                             list
                                         </Alert>
@@ -299,7 +299,7 @@ function StockDetails(props) {
                                     sx={{
                                         width: "100%",
                                         top: "8px",
-                                        padding: "0px 0.5rem",
+                                        padding: "0px 0.75rem",
                                         position: "fixed",
                                         right: "0",
                                         borderRadius: "32px",
