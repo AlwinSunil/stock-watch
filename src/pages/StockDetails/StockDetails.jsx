@@ -230,7 +230,7 @@ function StockDetails(props) {
                                     </>
                                 )}
                             </div>
-                            {stockAdded ? (
+                            {stockAdded && (
                                 <Fade
                                     in={stockAdded}
                                     sx={{
@@ -260,8 +260,8 @@ function StockDetails(props) {
                                         </Alert>
                                     </Stack>
                                 </Fade>
-                            ) : null}
-                            {stockRemoved ? (
+                            )}
+                            {stockRemoved && (
                                 <Fade
                                     in={stockRemoved}
                                     sx={{
@@ -292,8 +292,8 @@ function StockDetails(props) {
                                         </Alert>
                                     </Stack>
                                 </Fade>
-                            ) : null}
-                            {reachedWatchListLimit ? (
+                            )}
+                            {reachedWatchListLimit && (
                                 <Fade
                                     in={reachedWatchListLimit}
                                     sx={{
@@ -325,7 +325,7 @@ function StockDetails(props) {
                                         </Alert>
                                     </Stack>
                                 </Fade>
-                            ) : null}
+                            )}
                         </div>
                     ))}
                 </>

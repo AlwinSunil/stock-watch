@@ -1,17 +1,26 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { UserWatchListContext } from "../../context/UserWatchListContext"
 import Modal from "@mui/material/Modal"
+import NoFavStock from "../NoFavStock/NoFavStock"
 import StockMenu from "../StockMenu/StockMenu"
 import "./Home.scss"
 
 function Home() {
     const [open, setOpen] = useState(false)
-
+    const [listNull, setListNull] = useState(false)
     const { list } = useContext(UserWatchListContext)
     const [watchList] = list
 
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
+
+    useEffect(() => {
+        if (watchList) {
+            if (watchList.length === 0) {
+                setListNull(true)
+            }
+        }
+    }, [watchList])
 
     return (
         <div className="home">
@@ -19,15 +28,21 @@ function Home() {
                 <img src="/assets/icons/info.svg" alt="" />
                 <p>Data may not be that accurate.</p>
             </div>
-            <div className="stocks">
-                {watchList && (
-                    <>
-                        {watchList.map((stock) => (
-                            <StockMenu symbol={stock} key={stock} />
-                        ))}
-                    </>
-                )}
-            </div>
+
+            {listNull ? (
+                <NoFavStock />
+            ) : (
+                <div className="stocks">
+                    {watchList && (
+                        <>
+                            {watchList.map((stock) => (
+                                <StockMenu symbol={stock} key={stock} />
+                            ))}
+                        </>
+                    )}
+                </div>
+            )}
+
             <Modal
                 open={open}
                 onClose={handleClose}

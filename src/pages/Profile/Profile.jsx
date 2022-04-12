@@ -12,7 +12,7 @@ function Profile() {
         <>
             <Navigation header="Profile" />
             <div className="profile">
-                {userProfile ? (
+                {userProfile && (
                     <>
                         {userProfile.map((user) => (
                             <div className="profile__card" key="profile__card">
@@ -28,7 +28,7 @@ function Profile() {
                             </div>
                         ))}
                     </>
-                ) : null}
+                )}
 
                 <div className="profile__settings">
                     {loginProviderGoogle ? null : <UpdatePassword />}

@@ -1,0 +1,24 @@
+.nofavstocks {
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 4.75rem);
+    background: var(--neutral-bg-light);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 1.75rem;
+        }
+    }
+}

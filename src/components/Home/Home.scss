@@ -25,6 +25,8 @@
     margin: 0.5rem;
     margin-left: auto;
     padding: 0.5rem 0.9rem;
+    border: 1px solid var(--neutral);
+    background-color: var(--white);
     font-size: 0.7rem;
     text-align: end;
 
@@ -35,7 +37,7 @@
 
     & img {
         width: 1.25rem;
-        margin-right: 0.25rem;
+        margin-right: 0.4rem;
     }
 
     & p {
@@ -55,6 +57,7 @@
     align-items: center;
     justify-content: center;
     width: 90%;
+    max-width: 35rem;
     margin: auto;
     padding: 3rem 2rem 4rem 2rem;
     border-radius: 0.2rem;
