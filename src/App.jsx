@@ -22,7 +22,7 @@ function App() {
                 console.log("User found : " + user.uid)
                 console.log(user)
                 setUserLoggedIn(true)
-                setUserProfile([user.providerData[0]])
+                setUserProfile([user.providerData[0], user.displayName])
                 setUserId(user.uid)
             } else {
                 console.log("No user found")

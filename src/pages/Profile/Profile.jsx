@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Navigation from "../../components/Navigation"
 import UpdatePassword from "../../components/UpdatePassword"
-import "./Profile.scss"
 import ProfileLogic from "./ProfileLogic.jsx"
+import "./Profile.scss"
 
 function Profile() {
     const { userProfile, loginProviderGoogle, signOutUser } = ProfileLogic()
@@ -14,19 +14,17 @@ function Profile() {
             <div className="profile">
                 {userProfile && (
                     <>
-                        {userProfile.map((user) => (
-                            <div className="profile__card" key="profile__card">
-                                <div className="profile__card-img">
-                                    <img
-                                        src={`https://avatars.dicebear.com/api/initials/${user.displayName}.svg`}
-                                        alt=""
-                                        loading="lazy"
-                                    />
-                                </div>
-                                <h3>{user.displayName}</h3>
-                                <p>{user.email}</p>
+                        <div className="profile__card" key="profile__card">
+                            <div className="profile__card-img">
+                                <img
+                                    src={`https://avatars.dicebear.com/api/initials/${userProfile[0].displayName}.svg`}
+                                    alt=""
+                                    loading="lazy"
+                                />
                             </div>
-                        ))}
+                            <h3>{userProfile[1]}</h3>
+                            <p>{userProfile[0].email}</p>
+                        </div>
                     </>
                 )}
 

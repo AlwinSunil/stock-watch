@@ -2,7 +2,6 @@ import React from "react"
 import Navigation from "../../components/Navigation"
 import UpdateDP from "../../components/UpdateDP"
 import UpdateName from "../../components/UpdateName"
-import UpdatePassword from "../../components/UpdatePassword"
 import "./ProfileUpdate.scss"
 
 function UpdateProfile() {
@@ -11,7 +10,6 @@ function UpdateProfile() {
             <Navigation header="Update Profile" />
             <div className="profileupdate">
                 <UpdateName />
-                <UpdatePassword />
                 <UpdateDP />
             </div>
         </>
