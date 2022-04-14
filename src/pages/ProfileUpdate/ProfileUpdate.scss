@@ -8,6 +8,13 @@
     &__form {
         background: var(--neutral-bg-light);
     }
+
+    &__loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 9rem;
+    }
 }
 
 @media (min-width: 640px) {

@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Navigation from "../../components/Navigation"
 import UpdatePassword from "../../components/UpdatePassword"
-import ProfileLogic from "./ProfileLogic.jsx"
 import "./Profile.scss"
+import ProfileLogic from "./ProfileLogic.jsx"
 
 function Profile() {
     const { userProfile, loginProviderGoogle, signOutUser } = ProfileLogic()

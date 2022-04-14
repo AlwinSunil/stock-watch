@@ -22,14 +22,14 @@ function AlertModal(props) {
         setIsAlertSuccess((prev) => !prev)
         setTimeout(() => {
             setIsAlertSuccess((prev) => !prev)
-        }, 1500)
+        }, 2000)
     }
 
     const handleErr = () => {
         setIsAlertError((prev) => !prev)
         setTimeout(() => {
             setIsAlertError((prev) => !prev)
-        }, 1500)
+        }, 2000)
     }
 
     return (
@@ -39,7 +39,7 @@ function AlertModal(props) {
                     in={isAlertSuccess}
                     sx={{
                         width: "100%",
-                        top: "8px",
+                        top: "5px",
                         padding: "0px 0.75rem",
                         position: "fixed",
                         right: "0",
@@ -70,7 +70,7 @@ function AlertModal(props) {
                     in={isAlertError}
                     sx={{
                         width: "100%",
-                        top: "8px",
+                        top: "5px",
                         padding: "0px 0.75rem",
                         position: "fixed",
                         right: "0",
