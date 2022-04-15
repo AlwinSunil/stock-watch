@@ -1,24 +1,10 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import { getAuth, signOut } from "firebase/auth"
 import { UserProfileContext } from "../../context/UserProfileContext"
 
 function ProfileLogic() {
     /* ================= State and Context ================= */
     const [userProfile] = useContext(UserProfileContext)
-    const [loginProviderGoogle, setLoginProviderGoogle] = useState()
-
-    /* ================= useEffect ================= */
-    useEffect(() => {
-        if (userProfile) {
-            console.log(userProfile[0])
-            if (userProfile[0].providerId === "google.com") {
-                setLoginProviderGoogle(true)
-                console.log("Provider : Google.com")
-            } else {
-                setLoginProviderGoogle(false)
-            }
-        }
-    }, [userProfile])
 
     /* ================= Sign out user ================= */
     const signOutUser = () => {
@@ -32,8 +18,6 @@ function ProfileLogic() {
 
     return {
         userProfile,
-        loginProviderGoogle,
-        setLoginProviderGoogle,
         signOutUser,
     }
 }

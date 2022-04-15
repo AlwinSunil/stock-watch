@@ -1,12 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Navigation from "../../components/Navigation"
-import UpdatePassword from "../../components/UpdatePassword"
 import "./Profile.scss"
 import ProfileLogic from "./ProfileLogic.jsx"
 
 function Profile() {
-    const { userProfile, loginProviderGoogle, signOutUser } = ProfileLogic()
+    const { userProfile, signOutUser } = ProfileLogic()
 
     return (
         <>
@@ -19,7 +18,6 @@ function Profile() {
                                 <img
                                     src={`https://avatars.dicebear.com/api/initials/${userProfile[0].displayName}.svg`}
                                     alt=""
-                                    loading="lazy"
                                 />
                             </div>
                             <h3>{userProfile[1]}</h3>
@@ -27,9 +25,7 @@ function Profile() {
                         </div>
                     </>
                 )}
-
                 <div className="profile__settings">
-                    {loginProviderGoogle ? null : <UpdatePassword />}
                     <Link className="usersettings-btn menu" to="/updateprofile">
                         <p>Update Profile</p>
                     </Link>
@@ -41,9 +37,6 @@ function Profile() {
                     </div>
                 </div>
                 <div className="profile__settings">
-                    <Link className="usersettings-btn menu" to="/opensource">
-                        <p>Open-source License</p>
-                    </Link>
                     <Link className="usersettings-btn menu" to="/about">
                         <p>About</p>
                     </Link>

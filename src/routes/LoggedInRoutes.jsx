@@ -8,7 +8,6 @@ import { UserWatchListContext } from "../context/UserWatchListContext"
 import { db } from "../firebase"
 import About from "../pages/About"
 import HomePage from "../pages/HomePage"
-import OpenSourceLicenses from "../pages/OpenSourceLicenses"
 import Profile from "../pages/Profile"
 import ProfileUpdate from "../pages/ProfileUpdate"
 import Search from "../pages/Search"
@@ -37,10 +36,6 @@ function LoggedInRoutes() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<About />} />
-                    <Route
-                        path="/opensource"
-                        element={<OpenSourceLicenses />}
-                    />
                     <Route path="/addstock" element={<Search />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route
