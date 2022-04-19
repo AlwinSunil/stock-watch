@@ -77,7 +77,7 @@
         position: sticky;
         z-index: 99;
         height: 5rem;
-        border: 1px solid var(--neutral-hover);
+        border-bottom: 1px solid var(--neutral-hover);
     }
 
     &__holder {
@@ -113,7 +113,7 @@
     }
 
     .searchbar {
-        margin-left: 0.5rem;
+        margin-left: 0.4rem;
     }
 }
 
