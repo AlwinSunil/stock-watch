@@ -29,9 +29,7 @@ function LoggedInRoutes() {
     }, [userId])
 
     return (
-        <UserWatchListContext.Provider
-            value={{ list: [watchList, setWatchList] }}
-        >
+        <UserWatchListContext.Provider value={[watchList]}>
             <QueryClientProvider client={queryClient}>
                 <Routes>
                     <Route path="/" element={<HomePage />} />

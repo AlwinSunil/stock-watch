@@ -1,15 +1,14 @@
 import React, { useContext, useEffect, useState } from "react"
 import { UserWatchListContext } from "../../context/UserWatchListContext"
 import Modal from "@mui/material/Modal"
-import NoFavStock from "../NoFavStock/NoFavStock"
-import StockMenu from "../StockMenu/StockMenu"
+import NoFavStock from "../NoFavStock"
+import StockMenu from "../StockMenu"
 import "./Home.scss"
 
 function Home() {
     const [open, setOpen] = useState(false)
     const [listNull, setListNull] = useState(false)
-    const { list } = useContext(UserWatchListContext)
-    const [watchList] = list
+    const [watchList] = useContext(UserWatchListContext)
 
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)

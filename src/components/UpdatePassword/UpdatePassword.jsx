@@ -1,5 +1,5 @@
 import React from "react"
-import UpdatePasswordLogic from "./UpdatePasswordLogic.jsx"
+import UpdatePasswordLogic from "./UpdatePasswordLogic"
 
 function UpdatePassword() {
     const { isActive, setIsActive, showPassword } = UpdatePasswordLogic()

@@ -11,14 +11,15 @@ import { addSymbolToWatchList, removeSymbolFromWatchList } from "../../firebase"
 import "./StockDetails.scss"
 
 function StockDetails(props) {
+    // Local States
     const [stockDetails, setstockDetails] = useState([])
     const [isWatching, setIsWatching] = useState()
     const [stockAdded, setStockAdded] = useState(false)
     const [stockRemoved, setStockRemoved] = useState(false)
     const [reachedWatchListLimit, setReachedWatchListLimit] = useState(false)
 
-    const { list } = useContext(UserWatchListContext)
-    const [watchList] = list
+    // Context declaration
+    const [watchList] = useContext(UserWatchListContext)
 
     let { stock } = useParams()
 
@@ -32,7 +33,7 @@ function StockDetails(props) {
         }
     }, [watchList])
 
-    const { isLoading, isError, error } = useQuery("stock", () =>
+    const { isLoading } = useQuery("stock", () =>
         fetch(`/api/stock?symbol=${stock}`).then((res) =>
             res.json().then((data) => {
                 setstockDetails(data.result)

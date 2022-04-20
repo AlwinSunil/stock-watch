@@ -5,17 +5,13 @@ import { Link } from "react-router-dom"
 function StockMenu(props) {
     const [stock, setStock] = useState()
 
-    const { isError, error } = useQuery(`${props.symbol}`, () =>
+    useQuery(`${props.symbol}`, () =>
         fetch(`/api/stockpreview?symbol=${props.symbol}`).then((res) =>
             res.json().then((data) => {
                 setStock(data.result[0])
             })
         )
     )
-
-    // if (isError) {
-    //     return <span>{error}</span>
-    // }
 
     return (
         <>

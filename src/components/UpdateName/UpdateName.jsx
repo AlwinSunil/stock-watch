@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { getAuth, updateProfile } from "firebase/auth"
-import AlertModal from "../AlertModal/AlertModal"
-import HorizontalLoading from "../HorizontalLoading/HorizontalLoading"
+import AlertModal from "../AlertModal"
+import HorizontalLoading from "../HorizontalLoading"
 import "./UpdateName.scss"
 
 function UpdateName() {

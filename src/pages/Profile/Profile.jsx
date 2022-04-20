@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Navigation from "../../components/Navigation"
 import "./Profile.scss"
-import ProfileLogic from "./ProfileLogic.jsx"
+import ProfileLogic from "./ProfileLogic"
 
 function Profile() {
     const { userProfile, signOutUser } = ProfileLogic()
