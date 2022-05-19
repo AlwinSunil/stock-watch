@@ -32,10 +32,6 @@ function App() {
         setLoader(false)
     }, [])
 
-    if (loader) {
-        return <Loading />
-    }
-
     if (userLoggedIn === true) {
         return (
             <div className="app" id="app">
