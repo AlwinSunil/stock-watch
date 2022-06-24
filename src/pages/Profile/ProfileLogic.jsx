@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { getAuth, signOut } from "firebase/auth"
-import { UserProfileContext } from "../../context/UserProfileContext"
+import { UserProfileContext } from "@context/UserProfileContext"
 
 function ProfileLogic() {
     // Context declaration

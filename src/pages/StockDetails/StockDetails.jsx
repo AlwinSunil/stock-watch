@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useQuery } from "react-query"
 import { useParams } from "react-router-dom"
-import { UserWatchListContext } from "../../context/UserWatchListContext"
-import Loading from "../../components/Loading"
-import Navigation from "../../components/Navigation"
+import { UserWatchListContext } from "@context/UserWatchListContext"
+import Loading from "@components/Loading"
+import Navigation from "@components/Navigation"
 import Alert from "@mui/material/Alert"
 import Fade from "@mui/material/Fade"
 import Stack from "@mui/material/Stack"
-import { addSymbolToWatchList, removeSymbolFromWatchList } from "../../firebase"
+import { addSymbolToWatchList, removeSymbolFromWatchList } from "~firebase"
 import "./StockDetails.scss"
 
 function StockDetails(props) {

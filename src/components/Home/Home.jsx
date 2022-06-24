@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
-import { UserWatchListContext } from "../../context/UserWatchListContext"
+import { UserWatchListContext } from "@context/UserWatchListContext"
+import NoFavStock from "@components/NoFavStock"
+import StockMenu from "@components/StockMenu"
 import Modal from "@mui/material/Modal"
-import NoFavStock from "../NoFavStock"
-import StockMenu from "../StockMenu"
 import "./Home.scss"
 
 function Home() {

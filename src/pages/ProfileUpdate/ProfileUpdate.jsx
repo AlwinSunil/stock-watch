@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
-import { UserProfileContext } from "../../context/UserProfileContext"
-import Navigation from "../../components/Navigation"
-import UpdateName from "../../components/UpdateName"
-import UpdatePassword from "../../components/UpdatePassword"
+import { UserProfileContext } from "@context/UserProfileContext"
+import Navigation from "@components/Navigation"
+import UpdateName from "@components/UpdateName"
+import UpdatePassword from "@components/UpdatePassword"
 import "./ProfileUpdate.scss"
 
 function UpdateProfile() {

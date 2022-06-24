@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
-import { UserIdContext } from "./context/UserIdContext"
-import { UserLoggedInContext } from "./context/UserLoggedInContext"
-import { UserProfileContext } from "./context/UserProfileContext"
-import Loading from "./components/Loading"
-import GuestRoutes from "./routes/GuestRoutes"
-import LoggedInRoutes from "./routes/LoggedInRoutes"
-import "./firebase.js"
+import { UserIdContext } from "@context/UserIdContext"
+import { UserLoggedInContext } from "@context/UserLoggedInContext"
+import { UserProfileContext } from "@context/UserProfileContext"
+import Loading from "@components/Loading"
+import GuestRoutes from "@routes/GuestRoutes"
+import LoggedInRoutes from "@routes/LoggedInRoutes"
+import "~firebase"
 import "./App.scss"
 
 function App() {
-    const [loader, setLoader] = useState(true)
     const [userLoggedIn, setUserLoggedIn] = useState()
     const [userProfile, setUserProfile] = useState()
     const [userId, setUserId] = useState()
@@ -29,7 +28,6 @@ function App() {
                 setUserLoggedIn(false)
             }
         })
-        setLoader(false)
     }, [])
 
     if (userLoggedIn === true) {

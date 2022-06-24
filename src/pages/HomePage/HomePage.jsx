@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
-import AddBtn from "../../components/AddBtn"
-import Home from "../../components/Home"
-import Navbar from "../../components/Navbar"
+import AddBtn from "@components/AddBtn"
+import Home from "@components/Home"
+import Navbar from "@components/Navbar"
 
 function HomePage() {
     useEffect(() => {
