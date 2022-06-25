@@ -28,26 +28,3 @@ Deployed Single Page App and API in **vercel**.<br/>
 | ---------- | -------------------------------------------------- |
 | Build tool | `[vitejs](https://vitejs.dev/guide)`               |
 | Linter     | `[prettier`](https://prettier.io/docs/en/cli.html) |
-
-## Prettier Configuration
-
-Both files should be in **`root`** directory of the project
-<br/>
-File Name: **.prettierrc**
-
-    {
-        "tabWidth": 4,
-        "singleQuote": false,
-        "semi": false,
-        "bracketSameLine": false,
-        "arrowParens": "always"
-    }
-
-File name : **.prettierignore**
-
-    # Ignore artifacts:
-    build
-    dist
-    coverage
-    # Ignore all HTML files:
-     *.html
