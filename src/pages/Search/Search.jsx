@@ -35,42 +35,6 @@ function Search() {
             priceinst: "146.92 USD",
             growth: "+25.71",
         },
-        {
-            symbol: "TSLA",
-            name: "Tesla Inc",
-            priceinst: "774.39 USD",
-            growth: "+20.75",
-        },
-        {
-            symbol: "TSLA",
-            name: "Tesla Inc",
-            priceinst: "774.39 USD",
-            growth: "+20.75",
-        },
-        {
-            symbol: "GOOGL",
-            name: "Alphabet Inc Class A",
-            priceinst: "2,844.30 USD",
-            growth: "+19.98",
-        },
-        {
-            symbol: "MSFT",
-            name: "Microsoft Corporation",
-            priceinst: "299.35 USD",
-            growth: "+3.20",
-        },
-        {
-            symbol: "AAPL",
-            name: "Apple Inc",
-            priceinst: "146.92 USD",
-            growth: "+25.71",
-        },
-        {
-            symbol: "TSLA",
-            name: "Tesla Inc",
-            priceinst: "774.39 USD",
-            growth: "+20.75",
-        },
     ]
 
     return (

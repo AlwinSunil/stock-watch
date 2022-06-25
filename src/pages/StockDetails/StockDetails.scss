@@ -135,3 +135,11 @@
         font-weight: 600;
     }
 }
+
+@media screen and (min-width: 512px) {
+    .stockinfo {
+        max-width: 35rem;
+        margin: auto;
+        padding: 2rem;
+    }
+}

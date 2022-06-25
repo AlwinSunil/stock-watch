@@ -6,7 +6,7 @@
         "build": "vite build",
         "serve": "vite preview",
         "vercel-dev": "vercel dev --local-config local.vercel.json",
-        "pretty": "prettier --write \"./**/*.{js,jsx,json,scss,css,sass}\"",
+        "pretty": "prettier --write \"./**/*.{js,jsx,json,scss,sass,css,html}\"",
         "stylelint": "npx stylelint \"**/*.scss\" --fix",
         "format": "start npm run pretty && start npm run stylelint"
     },
